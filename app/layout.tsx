@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { DM_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
+const logoUrl =
+  "https://cleanfanatics.com/wp-content/uploads/2023/03/logo-25.png";
+
 const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-display",
@@ -17,21 +20,21 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Tappit | Your home, spotless - in a tap.",
-    template: "%s | Tappit",
+    default: "Clean Fantics | Your home, spotless - in a tap.",
+    template: "%s | Clean Fantics",
   },
   description:
-    "Tappit connects you with verified home cleaning professionals in minutes. Book on-demand, scheduled, or recurring help.",
-  metadataBase: new URL("https://tappit.in"),
+    "Clean Fantics connects you with verified home cleaning professionals in minutes. Book on-demand, scheduled, or recurring help.",
+  metadataBase: new URL("https://cleanfanatics.com"),
   openGraph: {
-    title: "Tappit",
+    title: "Clean Fantics",
     description: "Your home, spotless - in a tap.",
     type: "website",
   },
   icons: {
-    icon: "/favicon0clean.png",
-    shortcut: "/favicon0clean.png",
-    apple: "/favicon0clean.png",
+    icon: logoUrl,
+    shortcut: logoUrl,
+    apple: logoUrl,
   },
 };
 
@@ -42,7 +45,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${playfairDisplay.variable} ${dmSans.variable} antialiased`}>
+      <body
+        className={`${playfairDisplay.variable} ${dmSans.variable} antialiased`}
+      >
         {children}
       </body>
     </html>

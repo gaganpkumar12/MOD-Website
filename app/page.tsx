@@ -5,7 +5,7 @@ import HowItWorks from "@/components/HowItWorks";
 import Navbar from "@/components/Navbar";
 import ServicesCarousel from "@/components/ServicesCarousel";
 import Testimonials from "@/components/Testimonials";
-import WhyTappit from "@/components/WhyTappit";
+import WhyCleanFantics from "@/components/WhyCleanFantics";
 
 export default function Home() {
   return (
@@ -22,7 +22,7 @@ export default function Home() {
           <HowItWorks />
         </div>
         <div className="first-visit-reveal" style={{ animationDelay: "0.36s" }}>
-          <WhyTappit />
+          <WhyCleanFantics />
         </div>
         <div className="first-visit-reveal" style={{ animationDelay: "0.44s" }}>
           <Testimonials />
