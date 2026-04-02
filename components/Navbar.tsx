@@ -15,7 +15,7 @@ const logoUrl =
   "https://cleanfanatics.com/wp-content/uploads/2023/03/logo-25.png";
 
 const links = [
-  { label: "Why Us", href: "#why-clean-fantics" },
+  { label: "Why Us", href: "#why-clean-fanatics" },
   { label: "Services", href: "#services" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "FAQs", href: "#faq" },
@@ -81,7 +81,7 @@ export default function Navbar() {
           <Link href="#" className="inline-flex items-center justify-center">
             <Image
               src={logoUrl}
-              alt="Clean Fantics logo"
+              alt="Clean Fanatics logo"
               width={82}
               height={28}
               className="h-7 w-auto object-contain"
@@ -110,7 +110,7 @@ export default function Navbar() {
           >
             <Image
               src={logoUrl}
-              alt="Clean Fantics logo"
+              alt="Clean Fanatics logo"
               width={150}
               height={52}
               className="h-12 w-auto object-contain md:h-14"

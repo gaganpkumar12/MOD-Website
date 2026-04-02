@@ -8,7 +8,6 @@ import StoreBadges from "./StoreBadges";
 export default function Footer() {
   const footerRef = useRef<HTMLElement | null>(null);
   const [showCard, setShowCard] = useState(false);
-  const [dockToFooter, setDockToFooter] = useState(false);
   const [travelProgress, setTravelProgress] = useState(0);
   const [floatingOpacity, setFloatingOpacity] = useState(0);
 
@@ -25,7 +24,7 @@ export default function Footer() {
       const hasPassedServices = servicesRect.bottom <= fadeStart;
 
       const footerRect = footer.getBoundingClientRect();
-      const shouldDock = footerRect.top <= window.innerHeight - 180;
+      const reachedFooter = footerRect.top <= window.innerHeight - 180;
 
       const handoffProgressRaw =
         (fadeStart - servicesRect.bottom) / Math.max(1, fadeStart - hideAt);
@@ -37,8 +36,7 @@ export default function Footer() {
         (window.scrollY - travelStart) / Math.max(1, travelEnd - travelStart);
       const progress = Math.max(0, Math.min(1, progressRaw));
 
-      setShowCard(hasPassedServices);
-      setDockToFooter(hasPassedServices && shouldDock);
+      setShowCard(hasPassedServices && !reachedFooter);
       setTravelProgress(progress);
       setFloatingOpacity(handoffProgress);
     };
@@ -55,11 +53,11 @@ export default function Footer() {
 
   const downloadCard = (
     <div className="w-fit rounded-3xl border border-white/55 bg-white/95 p-4 shadow-xl shadow-sky-950/30 backdrop-blur-sm sm:p-5">
-      <p className="text-xs font-bold uppercase tracking-wider text-slate-700 sm:text-sm">
+      <p className="text-xs font-bold tracking-wider text-slate-700 sm:text-sm">
         Download
       </p>
       <p className="font-footer-display text-3xl font-black text-sky-600">
-        Clean Fantics
+        Clean Fanatics
       </p>
       <StoreBadges className="mt-3" size="sm" stacked />
     </div>
@@ -80,7 +78,7 @@ export default function Footer() {
         ✦
       </span>
 
-      {showCard && !dockToFooter ? (
+      {showCard ? (
         <motion.div
           initial={{ opacity: 0, y: 8, scale: 0.98 }}
           animate={{
@@ -95,21 +93,6 @@ export default function Footer() {
             ease: [0.22, 1, 0.36, 1],
           }}
           className="fixed bottom-12 left-4 z-50 hidden lg:block"
-        >
-          {downloadCard}
-        </motion.div>
-      ) : null}
-
-      {showCard && dockToFooter ? (
-        <motion.div
-          initial={{ opacity: 0, y: 16, scale: 0.97 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{
-            opacity: { duration: 0.12 },
-            duration: 0.22,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="absolute -top-6 left-4 z-50 hidden lg:block"
         >
           {downloadCard}
         </motion.div>
@@ -137,7 +120,7 @@ export default function Footer() {
         <div className="mt-12 border-t border-white/12 pb-10 pt-6 sm:pb-12">
           <p className="flex items-center justify-center gap-2 text-center text-sm text-sky-100/95">
             <Copyright className="h-4 w-4" />
-            2025 Clean Fantics. All rights reserved.
+            2025 Clean Fanatics. All rights reserved.
           </p>
         </div>
       </div>

@@ -133,7 +133,7 @@ export default function HowItWorks() {
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-8">
         <ScrollReveal className="lg:hidden">
           <h2 className="font-display text-center text-3xl font-black uppercase leading-[0.95] tracking-[0.01em] text-brand-dark sm:text-5xl">
-            How Clean Fantics{" "}
+            How Clean Fanatics{" "}
             <span className="italic text-sky-500">WORKS?</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-relaxed text-slate-600 sm:text-base">
@@ -148,7 +148,7 @@ export default function HowItWorks() {
             <div className="mx-auto w-full max-w-5xl">
               <div className="mb-6 text-center">
                 <h2 className="font-display text-5xl font-black uppercase leading-[0.95] tracking-[0.01em] text-brand-dark">
-                  How Clean Fantics{" "}
+                  How Clean Fanatics{" "}
                   <span className="italic text-sky-500">WORKS?</span>
                 </h2>
                 <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-slate-600">
