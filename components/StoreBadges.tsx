@@ -11,11 +11,14 @@ export default function StoreBadges({
   size = "md",
   stacked = false,
 }: StoreBadgesProps) {
-  const badgeSizeClass =
-    size === "sm" ? "h-11 min-w-[160px] px-4" : "h-14 min-w-[202px] px-5";
-  const iconClass = size === "sm" ? 22 : 28;
-  const topTextClass = size === "sm" ? "text-[8px]" : "text-[9px]";
-  const mainTextClass = size === "sm" ? "text-[1.6rem]" : "text-[1.95rem]";
+  const imageHeightClass = size === "sm" ? "h-11" : "h-14";
+  const imageWidth = size === "sm" ? 152 : 180;
+  const imageHeight = size === "sm" ? 44 : 56;
+
+  const googleBadgeUrl =
+    "https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg";
+  const appStoreBadgeUrl =
+    "https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg";
 
   return (
     <div
@@ -23,36 +26,30 @@ export default function StoreBadges({
     >
       <a
         href="#"
-        className={`inline-flex ${badgeSizeClass} items-center gap-3 rounded-[12px] bg-black text-white shadow-lg shadow-black/25`}
+        className="inline-flex cursor-pointer transition-transform duration-200 hover:scale-[1.02]"
       >
         <Image
-          src="/google-play_3128279.png"
-          alt="Google Play logo"
-          width={iconClass}
-          height={iconClass}
-          className="h-auto w-auto shrink-0 object-contain"
+          src={googleBadgeUrl}
+          alt="Get it on Google Play"
+          width={imageWidth}
+          height={imageHeight}
+          unoptimized
+          className={`${imageHeightClass} w-auto drop-shadow-2xl`}
         />
-        <span className="flex flex-col leading-none">
-          <span className={`${topTextClass} font-semibold uppercase tracking-[0.08em] text-white/90`}>Get it on</span>
-          <span className={`${mainTextClass} font-semibold`}>Google Play</span>
-        </span>
       </a>
 
       <a
         href="#"
-        className={`inline-flex ${badgeSizeClass} items-center gap-3 rounded-[12px] bg-black text-white shadow-lg shadow-black/25`}
+        className="inline-flex cursor-pointer transition-transform duration-200 hover:scale-[1.02]"
       >
         <Image
-          src="/appstore_16566128.png"
-          alt="App Store logo"
-          width={iconClass}
-          height={iconClass}
-          className="h-auto w-auto shrink-0 object-contain"
+          src={appStoreBadgeUrl}
+          alt="Download on the App Store"
+          width={imageWidth}
+          height={imageHeight}
+          unoptimized
+          className={`${imageHeightClass} w-auto drop-shadow-2xl`}
         />
-        <span className="flex flex-col leading-none">
-          <span className={`${topTextClass} font-semibold tracking-[0.05em] text-white/90`}>Download on the</span>
-          <span className={`${mainTextClass} font-semibold`}>App Store</span>
-        </span>
       </a>
     </div>
   );

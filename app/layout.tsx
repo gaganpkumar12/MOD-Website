@@ -27,14 +27,14 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "Clean Fantics | Your home, spotless - in a tap.",
-    template: "%s | Clean Fantics",
+    default: "Clean Fanatics | Your home, spotless - in a tap.",
+    template: "%s | Clean Fanatics",
   },
   description:
-    "Clean Fantics connects you with verified home cleaning professionals in minutes. Book on-demand, scheduled, or recurring help.",
+    "Clean Fanatics connects you with verified home cleaning professionals in minutes. Book on-demand, scheduled, or recurring help.",
   metadataBase: new URL("https://cleanfanatics.com"),
   openGraph: {
-    title: "Clean Fantics",
+    title: "Clean Fanatics",
     description: "Your home, spotless - in a tap.",
     type: "website",
   },

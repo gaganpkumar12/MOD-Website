@@ -12,9 +12,9 @@ interface FaqItem {
 
 const faqs: FaqItem[] = [
   {
-    question: "What is Clean Fantics?",
+    question: "What is Clean Fanatics?",
     answer:
-      "Clean Fantics is an on-demand home services app that connects you with verified cleaning professionals in minutes.",
+      "Clean Fanatics is an on-demand home services app that connects you with verified cleaning professionals in minutes.",
   },
   {
     question: "How quickly can I book a cleaner?",
@@ -22,7 +22,7 @@ const faqs: FaqItem[] = [
       "Most bookings can be confirmed within minutes, with same-day slots available based on your location and time.",
   },
   {
-    question: "Are Clean Fantics professionals verified?",
+    question: "Are Clean Fanatics professionals verified?",
     answer:
       "Yes. Every professional is background-checked, trained, and quality-reviewed before joining the platform.",
   },
@@ -32,7 +32,7 @@ const faqs: FaqItem[] = [
       "Pricing is transparent and shown before checkout, based on service type, duration, and frequency.",
   },
   {
-    question: "Which cities does Clean Fantics operate in?",
+    question: "Which cities does Clean Fanatics operate in?",
     answer:
       "Currently: Delhi NCR, Bengaluru, Mumbai, Hyderabad, and Chennai, with more cities launching soon.",
   },

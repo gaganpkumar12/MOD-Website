@@ -192,13 +192,13 @@ export default function Services() {
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
                     <Image
                       src="https://cleanfanatics.com/wp-content/uploads/2023/03/logo-25.png"
-                      alt="Clean Fantics logo"
+                      alt="Clean Fanatics logo"
                       width={86}
                       height={86}
                       className="drop-shadow-xl"
                     />
                     <p className="font-display mt-5 text-5xl font-black text-sky-600">
-                      Clean Fantics
+                      Clean Fanatics
                     </p>
                     <p className="text-sm text-slate-500">
                       Spotless in Minutes
@@ -219,7 +219,7 @@ export default function Services() {
                   Download
                 </p>
                 <p className="text-3xl font-black text-sky-600">
-                  Clean Fantics
+                  Clean Fanatics
                 </p>
                 <StoreBadges className="mt-3" size="sm" stacked />
               </div>

@@ -13,7 +13,7 @@ export default function Testimonials() {
         <ScrollReveal>
           <h2 className="font-display text-3xl font-extrabold text-brand-dark sm:text-5xl">What our users are saying</h2>
           <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
-            Real stories from households across Delhi NCR, Bengaluru, Mumbai, Hyderabad, and Chennai.
+            Real stories from households across Bengaluru.
           </p>
         </ScrollReveal>
       </div>

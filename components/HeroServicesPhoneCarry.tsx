@@ -88,7 +88,7 @@ export default function HeroServicesPhoneCarry() {
         <div className="flex h-full w-full items-center justify-center rounded-[30px] bg-gradient-to-b from-sky-100 to-sky-200 sm:rounded-[46px]">
           <Image
             src="https://cleanfanatics.com/wp-content/uploads/2023/03/logo-25.png"
-            alt="Clean Fantics logo"
+            alt="Clean Fanatics logo"
             width={72}
             height={72}
             className="drop-shadow-lg sm:h-[98px] sm:w-[98px]"

@@ -28,7 +28,7 @@ function PhonePreview({
         <div className="absolute inset-x-0 top-1 bottom-0">
           <Image
             src={imageSrc}
-            alt="Clean Fantics app screen"
+            alt="Clean Fanatics app screen"
             fill
             className="object-cover object-top"
           />
@@ -41,7 +41,6 @@ function PhonePreview({
 export default function Hero() {
   const { scrollY } = useScroll();
   const blobY = useTransform(scrollY, [0, 1000], [0, 300]);
-  const ringY = useTransform(scrollY, [0, 1000], [0, 120]);
 
   return (
     <section
@@ -102,21 +101,26 @@ export default function Hero() {
         style={{ y: useTransform(scrollY, [0, 1000], [0, 180]) }}
         className="pointer-events-none absolute bottom-10 right-1/3 h-60 w-60 rounded-full bg-blue-100/60 blur-3xl"
       />
-      <motion.div
-        style={{ y: ringY }}
-        className="pointer-events-none absolute right-16 top-14 h-56 w-56 rounded-full border border-sky-200/70"
-      />
-
       {/* Left side image (inverted) */}
       <div className="pointer-events-none absolute left-[-20%] top-[5.3%] z-30 flex h-[620px] w-[80%] items-start scale-x-[-1] lg:left-[-19%] lg:h-[980px] lg:w-[66%]">
-        <Image src="/right-image.png" alt="decoration left" fill className="object-contain object-left object-top" />
+        <Image
+          src="/right-image.png"
+          alt="decoration left"
+          fill
+          className="object-contain object-left object-top"
+        />
       </div>
 
       {/* Right side image */}
       <div className="pointer-events-none absolute right-[-20%] top-[5.3%] z-30 flex h-[620px] w-[80%] items-start lg:right-[-19%] lg:h-[980px] lg:w-[66%]">
-        <Image src="/right-image.png" alt="decoration right" fill className="object-contain object-right object-top" />
+        <Image
+          src="/right-image.png"
+          alt="decoration right"
+          fill
+          className="object-contain object-right object-top"
+        />
       </div>
-      
+
       <div className="pointer-events-none absolute inset-x-0 top-[42.7%] h-[480px] rounded-b-[5rem] bg-[linear-gradient(to_bottom,rgba(217,226,255,0.28)_0%,rgba(67,102,192,0.62)_35%,rgba(18,26,56,0.92)_100%)] sm:rounded-b-[6rem]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/65 to-transparent" />
 
@@ -124,7 +128,7 @@ export default function Hero() {
         <div className="max-w-3xl">
           <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white/95 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.16em] text-sky-700 shadow-sm">
             <Sparkles className="h-3.5 w-3.5" />
-            Clean Fantics - your home, spotless in a tap.
+            Clean Fanatics - your home, spotless in a tap.
           </p>
 
           <h1 className="font-display text-5xl font-black uppercase leading-[0.94] tracking-[0.01em] text-brand-dark sm:text-6xl lg:text-7xl">
