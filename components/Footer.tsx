@@ -58,7 +58,7 @@ export default function Footer() {
       <p className="text-xs font-bold uppercase tracking-wider text-slate-700 sm:text-sm">
         Download
       </p>
-      <p className="font-display text-3xl font-black text-sky-600">
+      <p className="font-footer-display text-3xl font-black text-sky-600">
         Clean Fantics
       </p>
       <StoreBadges className="mt-3" size="sm" stacked />
@@ -117,11 +117,11 @@ export default function Footer() {
 
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="font-display text-4xl font-black uppercase leading-[1.03] text-white sm:text-6xl">
+          <p className="font-footer-display text-4xl font-black uppercase leading-[1.03] text-white sm:text-6xl">
             YOUR HOME
           </p>
-          <h3 className="font-display mt-1 text-5xl font-black uppercase leading-[0.98] text-white sm:text-7xl">
-            <span className="italic text-sky-300 underline decoration-sky-300/70 underline-offset-4">
+          <h3 className="font-footer-display mt-1 text-5xl font-black uppercase leading-[0.98] text-white sm:text-7xl">
+            <span className="italic text-sky-300 decoration-sky-300/70 underline-offset-4">
               Deserves
             </span>{" "}
             Better
@@ -141,7 +141,6 @@ export default function Footer() {
           </p>
         </div>
       </div>
-
     </footer>
   );
 }

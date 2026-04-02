@@ -60,6 +60,13 @@ body {
     text-rendering: geometricPrecision;
   }
 
+  .font-footer-display {
+    font-family: var(--font-footer-display), serif;
+    font-stretch: normal;
+    font-kerning: normal;
+    text-rendering: geometricPrecision;
+  }
+
   .marquee-container {
     overflow: hidden;
     width: 100%;

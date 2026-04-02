@@ -1,13 +1,20 @@
 import type { Metadata } from "next";
-import { DM_Sans, Playfair_Display } from "next/font/google";
+import { DM_Sans, Open_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const logoUrl =
   "https://cleanfanatics.com/wp-content/uploads/2023/03/logo-25.png";
 
-const playfairDisplay = Playfair_Display({
+const openSans = Open_Sans({
   subsets: ["latin"],
   variable: "--font-display",
+  weight: ["300", "400", "500", "600", "700", "800"],
+  style: ["normal"],
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-footer-display",
   weight: ["600", "700", "800", "900"],
   style: ["normal", "italic"],
 });
@@ -46,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${playfairDisplay.variable} ${dmSans.variable} antialiased`}
+        className={`${openSans.variable} ${playfairDisplay.variable} ${dmSans.variable} antialiased`}
       >
         {children}
       </body>
