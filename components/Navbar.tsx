@@ -56,16 +56,72 @@ export default function Navbar() {
       <motion.nav
         animate={{
           backgroundColor: scrolled
-            ? "rgba(255,255,255,0.96)"
+            ? "rgba(255,255,255,0.42)"
             : "rgba(255,255,255,0.9)",
           borderColor: scrolled
-            ? "rgba(194,214,238,0.95)"
+            ? "rgba(186,214,245,0.72)"
             : "rgba(194,214,238,0.85)",
+          boxShadow: scrolled
+            ? "0 16px 40px rgba(15,23,42,0.18), inset 0 1px 0 rgba(255,255,255,0.7)"
+            : "0 12px 28px rgba(15,23,42,0.08)",
+          scale: scrolled ? 1 : 0.995,
         }}
         transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-        className="relative mx-auto flex w-full max-w-3xl items-center justify-between overflow-hidden rounded-full border px-4 py-2.5 shadow-[0_12px_28px_rgba(15,23,42,0.08)] backdrop-blur-md sm:px-5 sm:py-3 md:px-7 md:py-3"
+        className="relative mx-auto flex w-full max-w-3xl items-center justify-between overflow-hidden rounded-full border border-white/60 px-4 py-2.5 backdrop-blur-2xl backdrop-saturate-150 sm:px-5 sm:py-3 md:px-7 md:py-3"
       >
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.95),rgba(248,250,252,0.88))]" />
+        <motion.div
+          animate={{
+            opacity: scrolled ? 1 : 0.85,
+            background: scrolled
+              ? "linear-gradient(180deg, rgba(255,255,255,0.58), rgba(240,249,255,0.38))"
+              : "linear-gradient(180deg, rgba(255,255,255,0.95), rgba(248,250,252,0.88))",
+          }}
+          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          className="pointer-events-none absolute inset-0"
+        />
+        <motion.span
+          aria-hidden="true"
+          animate={{
+            opacity: scrolled ? 0.9 : 0,
+            x: scrolled ? 10 : -16,
+            y: scrolled ? -2 : 8,
+          }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          className="pointer-events-none absolute -left-8 top-1/2 h-14 w-24 -translate-y-1/2 rounded-full bg-sky-200/55 blur-xl"
+        />
+        <motion.span
+          aria-hidden="true"
+          animate={{
+            opacity: scrolled ? 0.8 : 0,
+            x: scrolled ? -8 : 18,
+            y: scrolled ? 0 : -8,
+          }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          className="pointer-events-none absolute -right-8 top-1/2 h-14 w-24 -translate-y-1/2 rounded-full bg-cyan-200/50 blur-xl"
+        />
+        <motion.span
+          aria-hidden="true"
+          animate={{
+            opacity: scrolled ? 0.72 : 0,
+            x: scrolled ? ["-42%", "148%"] : "-42%",
+          }}
+          transition={{
+            opacity: { duration: 0.3, ease: [0.22, 1, 0.36, 1] },
+            x: {
+              duration: 2.4,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "linear",
+            },
+          }}
+          className="pointer-events-none absolute inset-y-1 left-0 w-1/3 rounded-full bg-gradient-to-r from-transparent via-white/65 to-transparent mix-blend-screen blur-md"
+        />
+        <motion.span
+          aria-hidden="true"
+          animate={{ opacity: scrolled ? 1 : 0.78 }}
+          transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+          className="pointer-events-none absolute inset-x-6 top-[1px] h-px bg-white/80"
+        />
 
         <div className="relative z-10 flex w-full items-center justify-between md:hidden">
           <button
@@ -104,10 +160,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          <Link
-            href="#"
-            className="inline-flex items-center justify-center"
-          >
+          <Link href="#" className="inline-flex items-center justify-center">
             <Image
               src={logoUrl}
               alt="Clean Fanatics logo"
@@ -129,7 +182,6 @@ export default function Navbar() {
             ))}
           </div>
         </div>
-
       </motion.nav>
 
       <AnimatePresence>
@@ -158,6 +210,5 @@ export default function Navbar() {
         )}
       </AnimatePresence>
     </motion.header>
-
   );
 }

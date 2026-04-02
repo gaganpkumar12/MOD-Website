@@ -57,7 +57,7 @@ export default function Footer() {
         Download
       </p>
       <p className="text-3xl font-bold text-sky-600">
-        Clean Fantics
+        Clean Fanatics
       </p>
       <StoreBadges className="mt-3" size="sm" stacked />
     </div>

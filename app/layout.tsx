@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, Open_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const logoUrl =
-  "https://cleanfanatics.com/wp-content/uploads/2023/03/logo-25.png";
+const faviconPath = "/CF LOGO WITHOUT TEXT.png";
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -39,9 +38,9 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: logoUrl,
-    shortcut: logoUrl,
-    apple: logoUrl,
+    icon: faviconPath,
+    shortcut: faviconPath,
+    apple: faviconPath,
   },
 };
 
