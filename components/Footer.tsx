@@ -5,15 +5,6 @@ import { Copyright } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import StoreBadges from "./StoreBadges";
 
-const legalLinks = [
-  "Terms of Use",
-  "Privacy Policy",
-  "Equal Opportunity Policy",
-  "Refund & Cancellation Policy",
-  "Vulnerability Disclosure Policy",
-  "Annual Return",
-];
-
 export default function Footer() {
   const footerRef = useRef<HTMLElement | null>(null);
   const [showCard, setShowCard] = useState(false);
@@ -36,12 +27,14 @@ export default function Footer() {
       const footerRect = footer.getBoundingClientRect();
       const shouldDock = footerRect.top <= window.innerHeight - 180;
 
-      const handoffProgressRaw = (fadeStart - servicesRect.bottom) / Math.max(1, fadeStart - hideAt);
+      const handoffProgressRaw =
+        (fadeStart - servicesRect.bottom) / Math.max(1, fadeStart - hideAt);
       const handoffProgress = Math.max(0, Math.min(1, handoffProgressRaw));
 
       const travelStart = servicesTop + services.offsetHeight * 0.62;
       const travelEnd = servicesTop + services.offsetHeight + 280;
-      const progressRaw = (window.scrollY - travelStart) / Math.max(1, travelEnd - travelStart);
+      const progressRaw =
+        (window.scrollY - travelStart) / Math.max(1, travelEnd - travelStart);
       const progress = Math.max(0, Math.min(1, progressRaw));
 
       setShowCard(hasPassedServices);
@@ -62,17 +55,30 @@ export default function Footer() {
 
   const downloadCard = (
     <div className="w-fit rounded-3xl border border-white/55 bg-white/95 p-4 shadow-xl shadow-sky-950/30 backdrop-blur-sm sm:p-5">
-      <p className="text-xs font-bold uppercase tracking-wider text-slate-700 sm:text-sm">Download</p>
-      <p className="font-display text-3xl font-black text-sky-600">The Tappit</p>
+      <p className="text-xs font-bold uppercase tracking-wider text-slate-700 sm:text-sm">
+        Download
+      </p>
+      <p className="font-display text-3xl font-black text-sky-600">
+        Clean Fantics
+      </p>
       <StoreBadges className="mt-3" size="sm" stacked />
     </div>
   );
 
   return (
-    <footer ref={footerRef} className="relative flex min-h-screen flex-col overflow-hidden bg-brand-dark pb-16 pt-16 text-sky-100 sm:pt-20">
-      <span className="pointer-events-none absolute left-[18%] top-4 text-2xl text-sky-300/90">✦</span>
-      <span className="pointer-events-none absolute right-[20%] top-24 text-3xl text-sky-300/90">✦</span>
-      <span className="pointer-events-none absolute left-[2%] top-40 text-2xl text-sky-300/80">✦</span>
+    <footer
+      ref={footerRef}
+      className="relative overflow-hidden bg-brand-dark pb-10 pt-14 text-sky-100 sm:pt-16"
+    >
+      <span className="pointer-events-none absolute left-[18%] top-4 text-2xl text-sky-300/90">
+        ✦
+      </span>
+      <span className="pointer-events-none absolute right-[20%] top-24 text-3xl text-sky-300/90">
+        ✦
+      </span>
+      <span className="pointer-events-none absolute left-[2%] top-40 text-2xl text-sky-300/80">
+        ✦
+      </span>
 
       {showCard && !dockToFooter ? (
         <motion.div
@@ -83,7 +89,11 @@ export default function Footer() {
             x: travelProgress * 5,
             scale: 1 - travelProgress * 0.03,
           }}
-          transition={{ opacity: { duration: 0.12 }, duration: 0.18, ease: [0.22, 1, 0.36, 1] }}
+          transition={{
+            opacity: { duration: 0.12 },
+            duration: 0.18,
+            ease: [0.22, 1, 0.36, 1],
+          }}
           className="fixed bottom-12 left-4 z-50 hidden lg:block"
         >
           {downloadCard}
@@ -94,20 +104,27 @@ export default function Footer() {
         <motion.div
           initial={{ opacity: 0, y: 16, scale: 0.97 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ opacity: { duration: 0.12 }, duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+          transition={{
+            opacity: { duration: 0.12 },
+            duration: 0.22,
+            ease: [0.22, 1, 0.36, 1],
+          }}
           className="absolute -top-6 left-4 z-50 hidden lg:block"
         >
           {downloadCard}
         </motion.div>
       ) : null}
 
-      <div className="mx-auto flex h-full w-full max-w-6xl flex-1 flex-col justify-between px-4 sm:px-8">
+      <div className="mx-auto w-full max-w-6xl px-4 sm:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-display text-4xl font-black uppercase leading-[1.03] text-white sm:text-6xl">
             YOUR HOME
           </p>
           <h3 className="font-display mt-1 text-5xl font-black uppercase leading-[0.98] text-white sm:text-7xl">
-            <span className="italic text-sky-300 underline decoration-sky-300/70 underline-offset-4">Deserves</span> Better
+            <span className="italic text-sky-300 underline decoration-sky-300/70 underline-offset-4">
+              Deserves
+            </span>{" "}
+            Better
           </h3>
           <p className="mx-auto mt-6 max-w-xl text-lg text-sky-100/90">
             Professional cleaning at your fingertips, whenever you need it.
@@ -117,27 +134,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/12 pb-24 pt-6 sm:pb-28">
-          <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
-            <p className="flex items-center gap-2 text-sm text-sky-100/95">
-              <Copyright className="h-4 w-4" />
-              2025 Tappit. All rights reserved.
-            </p>
-
-            <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs text-sky-200 sm:text-sm">
-              {legalLinks.map((link) => (
-                <a key={link} href="#" className="transition hover:text-white">
-                  {link}
-                </a>
-              ))}
-            </div>
-          </div>
+        <div className="mt-12 border-t border-white/12 pb-10 pt-6 sm:pb-12">
+          <p className="flex items-center justify-center gap-2 text-center text-sm text-sky-100/95">
+            <Copyright className="h-4 w-4" />
+            2025 Clean Fantics. All rights reserved.
+          </p>
         </div>
       </div>
 
-      <p className="pointer-events-none absolute -bottom-16 left-0 right-0 select-none font-display text-[16rem] font-black uppercase leading-none tracking-tight text-sky-200/10 sm:text-[24rem] lg:text-[36rem] whitespace-nowrap">
-        Tappit
-      </p>
     </footer>
   );
 }

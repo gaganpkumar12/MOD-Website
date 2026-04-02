@@ -30,12 +30,12 @@ const benefits: Benefit[] = [
   },
 ];
 
-export default function WhyTappit() {
+export default function WhyCleanFantics() {
   return (
-    <section id="why-tappit" className="pattern-diagonal bg-sky-50 py-16 sm:py-24">
+    <section id="why-clean-fantics" className="pattern-diagonal bg-sky-50 py-16 sm:py-24">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-8">
         <ScrollReveal>
-          <h2 className="font-display text-3xl font-extrabold text-brand-dark sm:text-5xl">Why Tappit</h2>
+          <h2 className="font-display text-3xl font-extrabold text-brand-dark sm:text-5xl">Why Clean Fantics</h2>
           <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
             Built for busy urban homes: verified professionals, instant slots, and support that actually responds.
           </p>
