@@ -204,6 +204,7 @@ export default function Navbar() {
                   {item.label}
                 </a>
               ))}
+              
             </div>
           </motion.div>
         )}

@@ -114,11 +114,11 @@ export default function HowItWorks() {
   });
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    if (latest < 0.42) {
+    if (latest < 0.3) {
       setActiveIndex(0);
       return;
     }
-    if (latest < 0.78) {
+    if (latest < 1) {
       setActiveIndex(1);
       return;
     }
@@ -143,7 +143,7 @@ export default function HowItWorks() {
         </ScrollReveal>
 
         {/* Desktop: Isolated sticky scroll scene for proper card stacking */}
-        <div ref={stackRef} className="relative mt-6 hidden h-[168vh] lg:block">
+        <div ref={stackRef} className="relative mt-6 hidden h-[220vh] lg:block">
           <div className="sticky top-16 flex h-[calc(100vh-4rem)] items-start">
             <div className="mx-auto w-full max-w-5xl">
               <div className="mb-6 text-center">
@@ -175,20 +175,20 @@ export default function HowItWorks() {
           {steps.map((step, index) => (
             <article
               key={`mobile-${step.title}`}
-              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-lg sm:p-8"
+              className="rounded-3xl border-0 bg-white p-6 shadow-lg sm:border sm:border-slate-200 sm:p-8"
             >
-              <div className="mb-6 rounded-2xl border-[4px] border-black bg-black p-0 overflow-hidden">
+              <div className="mb-6 overflow-hidden rounded-2xl border-0 bg-black p-0 sm:border-[4px] sm:border-black">
                 <div className="relative h-[280px] w-full bg-white">
                   <Image
                     src={step.image}
                     alt={step.title}
                     fill
-                    className="object-cover"
+                    className="scale-150 object-cover sm:scale-100"
                     priority
                   />
                 </div>
               </div>
-              <span className="inline-flex rounded-full bg-sky-500 px-4 py-2 text-xs font-black uppercase tracking-wider text-white">
+              <span className="inline-flex rounded-full bg-sky-500 px-4 py- text-xs font-black uppercase tracking-wider text-white">
                 Step {index + 1}
               </span>
               <h3 className="font-display mt-4 text-2xl font-black uppercase leading-tight text-brand-dark sm:text-3xl">

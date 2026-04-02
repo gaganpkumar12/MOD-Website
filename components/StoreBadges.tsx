@@ -11,7 +11,7 @@ export default function StoreBadges({
   size = "md",
   stacked = false,
 }: StoreBadgesProps) {
-  const imageHeightClass = size === "sm" ? "h-11" : "h-14";
+  const imageHeightClass = size === "sm" ? "h-10 sm:h-11" : "h-11 sm:h-14";
   const imageWidth = size === "sm" ? 152 : 180;
   const imageHeight = size === "sm" ? 44 : 56;
 
@@ -22,7 +22,7 @@ export default function StoreBadges({
 
   return (
     <div
-      className={`flex ${stacked ? "flex-col" : "flex-wrap"} items-center gap-3 ${className}`}
+      className={`flex ${stacked ? "flex-col" : "flex-wrap"} items-center justify-center gap-3 ${className}`}
     >
       <a
         href="#"

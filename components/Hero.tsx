@@ -102,7 +102,7 @@ export default function Hero() {
         className="pointer-events-none absolute bottom-10 right-1/3 h-60 w-60 rounded-full bg-blue-100/60 blur-3xl"
       />
       {/* Left side image (inverted) */}
-      <div className="pointer-events-none absolute left-[-20%] top-[5.3%] z-30 flex h-[620px] w-[80%] items-start scale-x-[-1] lg:left-[-19%] lg:h-[980px] lg:w-[66%]">
+      <div className="pointer-events-none absolute left-[-20%] top-[5.3%] z-30 hidden h-[620px] w-[80%] items-start scale-x-[-1] lg:flex lg:left-[-19%] lg:h-[980px] lg:w-[66%]">
         <Image
           src="/right-image.png"
           alt="decoration left"
@@ -112,7 +112,7 @@ export default function Hero() {
       </div>
 
       {/* Right side image */}
-      <div className="pointer-events-none absolute right-[-20%] top-[5.3%] z-30 flex h-[620px] w-[80%] items-start lg:right-[-19%] lg:h-[980px] lg:w-[66%]">
+      <div className="pointer-events-none absolute right-[-20%] top-[5.3%] z-30 hidden h-[620px] w-[80%] items-start lg:flex lg:right-[-19%] lg:h-[980px] lg:w-[66%]">
         <Image
           src="/right-image.png"
           alt="decoration right"
@@ -131,7 +131,7 @@ export default function Hero() {
             Clean Fanatics - your home, spotless in a tap.
           </p>
 
-          <h1 className="font-display text-5xl font-black uppercase leading-[0.94] tracking-[0.01em] text-brand-dark sm:text-6xl lg:text-7xl">
+          <h1 className="font-display text-4xl font-black uppercase leading-[0.96] tracking-[0.01em] text-brand-dark sm:text-6xl lg:text-7xl">
             {words.map((word, index) => (
               <motion.span
                 key={word}
@@ -142,7 +142,7 @@ export default function Hero() {
                   ease: [0.22, 1, 0.36, 1],
                   delay: index * 0.08,
                 }}
-                className="mr-3 inline-block"
+                className="mr-2 inline-block sm:mr-3"
               >
                 {word === "QUICK" ? (
                   <span className="italic text-sky-500">{word}</span>
@@ -161,7 +161,7 @@ export default function Hero() {
               ease: [0.22, 1, 0.36, 1],
               delay: 0.48,
             }}
-            className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-slate-600"
+            className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg"
           >
             Download the app and book verified professionals for spotless
             cleaning in minutes.
@@ -180,7 +180,7 @@ export default function Hero() {
             <StoreBadges />
           </motion.div>
 
-          <p className="mx-auto mt-8 max-w-lg text-xl font-medium text-slate-500">
+          <p className="mx-auto mt-8 max-w-lg text-base font-medium text-slate-500 sm:text-xl">
             Your home, professionally cleaned right when you need it.
           </p>
 
@@ -195,7 +195,7 @@ export default function Hero() {
             className="mt-10 flex justify-center lg:hidden"
           >
             <PhonePreview
-              className="h-[460px] w-[240px]"
+              className="h-[400px] w-[210px] sm:h-[460px] sm:w-[240px]"
               imageSrc={homeScreenSrc}
             />
           </motion.div>
