@@ -218,7 +218,7 @@ export default function Services() {
                 <p className="text-xs font-bold uppercase tracking-wider text-slate-700 sm:text-sm">
                   Download
                 </p>
-                <p className="text-3xl font-black text-sky-600">
+                <p className="font-display text-3xl font-black text-sky-600">
                   Clean Fantics
                 </p>
                 <StoreBadges className="mt-3" size="sm" stacked />

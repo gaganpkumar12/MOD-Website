@@ -54,11 +54,11 @@ export default function Footer() {
   }, []);
 
   const downloadCard = (
-    <div className="w-fit rounded-3xl border border-white/55 bg-white/95 p-4 shadow-xl shadow-sky-950/30 backdrop-blur-sm sm:p-5">
+    <div className="font-display w-fit rounded-3xl border border-white/55 bg-white/95 p-4 shadow-xl shadow-sky-950/30 backdrop-blur-sm sm:p-5">
       <p className="text-xs font-bold uppercase tracking-wider text-slate-700 sm:text-sm">
         Download
       </p>
-      <p className="font-footer-display text-3xl font-black text-sky-600">
+      <p className="text-3xl font-black text-sky-600">
         Clean Fantics
       </p>
       <StoreBadges className="mt-3" size="sm" stacked />

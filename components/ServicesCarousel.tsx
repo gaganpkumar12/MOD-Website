@@ -58,7 +58,7 @@ export default function ServicesCarousel() {
             Book trusted cleaning help
           </h2>
           <p className="mt-3 text-lg font-semibold text-slate-500">
-            From deep cleans to daily upkeep, Pronto&apos;s got you covered
+            From deep cleans to daily upkeep, CleanFanatics&apos;s got you covered
           </p>
         </div>
       </div>

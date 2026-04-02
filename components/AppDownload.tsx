@@ -15,7 +15,7 @@ export default function AppDownload() {
         <div className="rounded-3xl border border-sky-200 bg-white/90 p-8 text-center shadow-xl backdrop-blur-sm sm:p-10">
           <ScrollReveal>
             <h2 className="font-display text-3xl font-black uppercase tracking-[0.01em] text-brand-dark sm:text-5xl">
-              Download The Tappit App
+              Download The Clean Fantics App
             </h2>
           </ScrollReveal>
 
