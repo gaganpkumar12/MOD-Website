@@ -73,7 +73,7 @@ export default function ServicesCarousel() {
         </div>
       </div>
 
-      <div className="mx-auto mt-10 w-full max-w-4xl px-4 sm:px-8">
+      <div className="mx-auto mt-10 w-full max-w-4xl px-4 sm:px-8 md:hidden">
         <div className="rounded-3xl border border-sky-200 bg-sky-50 px-6 py-8 text-center shadow-lg shadow-sky-100/70 sm:px-8">
           <p className="mx-auto max-w-2xl text-sm leading-relaxed text-slate-700 sm:text-base">
             Download the app to book faster, track your service, and keep your

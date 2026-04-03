@@ -130,7 +130,7 @@ export default function Hero() {
             }}
             className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-slate-600"
           >
-            Book verified professionals for a spotless home - all in just three
+            Book verified professionals for a spotless home - all in just 3
             taps.
           </motion.p>
 

@@ -77,7 +77,7 @@ export default function WhyCleanFanatics() {
         </div>
 
         <ScrollReveal delay={0.35}>
-          <div className="mt-10 rounded-3xl border border-sky-200 bg-slate-950/20 px-6 py-8 text-center shadow-lg shadow-black/10 sm:px-8">
+          <div className="mt-10 rounded-3xl border border-sky-200 bg-slate-950/20 px-6 py-8 text-center shadow-lg shadow-black/10 sm:px-8 md:hidden">
             <p className="mx-auto max-w-2xl text-sm leading-relaxed text-sky-100 sm:text-base">
               Download the app to book faster, track your service, and keep your
               next clean one tap away.
