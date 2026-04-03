@@ -1,11 +1,10 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Sparkles } from "lucide-react";
 import Image from "next/image";
 import StoreBadges from "./StoreBadges";
 
-const words = ["TRUSTED", "QUICK", "HOME", "HELP", "IN", "MINUTES!"];
+const words = ["TRUSTED", "QUICK", "HOUSE", "HELP", "IN", "MINUTES!"];
 const homeScreenSrc = "/home.jpeg";
 const bookingScreenSrc = "/booking.jpeg";
 const bookingSuccessScreenSrc = "/booking%20success.jpeg";
@@ -59,33 +58,6 @@ export default function Hero() {
             transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut" }}
             className="absolute left-1/2 top-6 h-10 w-32 -translate-x-1/2 rounded-full bg-gradient-to-r from-transparent via-sky-200/80 to-transparent blur-md"
           />
-          <motion.div
-            animate={{
-              rotate: [0, 16, 0],
-              scale: [0.9, 1.15, 0.9],
-              opacity: [0.55, 1, 0.55],
-            }}
-            transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute left-[24%] top-2 text-sky-400"
-          >
-            <Sparkles className="h-6 w-6" />
-          </motion.div>
-          <motion.div
-            animate={{
-              rotate: [0, -14, 0],
-              scale: [0.8, 1.05, 0.8],
-              opacity: [0.45, 0.9, 0.45],
-            }}
-            transition={{
-              duration: 3.1,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 0.4,
-            }}
-            className="absolute right-[24%] top-0 text-sky-300"
-          >
-            <Sparkles className="h-5 w-5" />
-          </motion.div>
         </div>
       </motion.div>
 
@@ -102,7 +74,10 @@ export default function Hero() {
         className="pointer-events-none absolute bottom-10 right-1/3 h-60 w-60 rounded-full bg-blue-100/60 blur-3xl"
       />
       {/* Left side image (inverted) */}
-      <div className="pointer-events-none absolute z-[2] hidden items-start scale-x-[-1] lg:left-[-18%] lg:top-[24%] lg:flex lg:h-[600px] lg:w-[520px] xl:left-[-10%] xl:top-[23%] xl:h-[720px] xl:w-[640px] min-[1320px]:left-[-4.7%] min-[1320px]:top-[21.8%] min-[1320px]:h-[860px] min-[1320px]:w-[760px]" aria-hidden="true">
+      <div
+        className="pointer-events-none absolute z-[2] hidden items-start scale-x-[-1] lg:left-[-18%] lg:top-[24%] lg:flex lg:h-[600px] lg:w-[520px] xl:left-[-10%] xl:top-[23%] xl:h-[720px] xl:w-[640px] min-[1320px]:left-[-4.7%] min-[1320px]:top-[21.4%] min-[1320px]:h-[860px] min-[1320px]:w-[760px]"
+        aria-hidden="true"
+      >
         <Image
           src="/right-image.png"
           alt="decoration left"
@@ -112,7 +87,10 @@ export default function Hero() {
       </div>
 
       {/* Right side image */}
-      <div className="pointer-events-none absolute z-[2] hidden items-start lg:right-[-18%] lg:top-[24%] lg:flex lg:h-[600px] lg:w-[520px] xl:right-[-10%] xl:top-[23%] xl:h-[720px] xl:w-[640px] min-[1320px]:right-[-4.7%] min-[1320px]:top-[21.8%] min-[1320px]:h-[860px] min-[1320px]:w-[760px]" aria-hidden="true">
+      <div
+        className="pointer-events-none absolute z-[2] hidden items-start lg:right-[-18%] lg:top-[24%] lg:flex lg:h-[600px] lg:w-[520px] xl:right-[-10%] xl:top-[23%] xl:h-[720px] xl:w-[640px] min-[1320px]:right-[-4.7%] min-[1320px]:top-[21.4%] min-[1320px]:h-[860px] min-[1320px]:w-[760px]"
+        aria-hidden="true"
+      >
         <Image
           src="/right-image.png"
           alt="decoration right"
@@ -121,16 +99,11 @@ export default function Hero() {
         />
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 top-[42.7%] z-[1] h-[480px] rounded-b-[5rem] bg-[linear-gradient(to_bottom,rgba(217,226,255,0.28)_0%,rgba(67,102,192,0.62)_35%,rgba(18,26,56,0.92)_100%)] sm:rounded-b-[6rem]" />
+      <div className="pointer-events-none absolute inset-x-0 top-[43.8%] z-[1] h-[480px] rounded-b-[5rem] bg-[linear-gradient(to_bottom,rgba(217,226,255,0.28)_0%,rgba(67,102,192,0.62)_35%,rgba(18,26,56,0.92)_100%)] sm:rounded-b-[6rem]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-32 bg-gradient-to-b from-white/65 to-transparent" />
 
       <div className="relative z-10 mx-auto flex min-h-[86vh] w-full max-w-5xl flex-col items-center px-4 pb-10 pt-4 text-center sm:px-8">
         <div className="max-w-3xl">
-          <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-sky-200 bg-white/95 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.16em] text-sky-700 shadow-sm">
-            <Sparkles className="h-3.5 w-3.5" />
-            Clean Fanatics - your home, spotless in a tap.
-          </p>
-
           <h1 className="font-display text-5xl font-black uppercase leading-[0.94] tracking-[0.01em] text-brand-dark sm:text-6xl lg:text-7xl">
             {words.map((word, index) => (
               <motion.span
@@ -163,7 +136,8 @@ export default function Hero() {
             }}
             className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-slate-600"
           >
-            Book verified professionals for a spotless home - all in just a few taps.
+            Book verified professionals for a spotless home - all in just 3
+            taps
           </motion.p>
 
           <motion.div

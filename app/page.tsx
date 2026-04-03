@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import HowItWorks from "@/components/HowItWorks";
 import Navbar from "@/components/Navbar";
+// import AppDownload from "@/components/AppDownload";
 import ServicesCarousel from "@/components/ServicesCarousel";
 import Testimonials from "@/components/Testimonials";
 import WhyCleanFanatics from "@/components/WhyCleanFanatics";
