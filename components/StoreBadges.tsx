@@ -11,9 +11,9 @@ export default function StoreBadges({
   size = "md",
   stacked = false,
 }: StoreBadgesProps) {
-  const imageHeightClass = size === "sm" ? "h-10 sm:h-11" : "h-11 sm:h-14";
-  const imageWidth = size === "sm" ? 152 : 180;
-  const imageHeight = size === "sm" ? 44 : 56;
+  const imageHeightClass = size === "sm" ? "h-9 sm:h-11" : "h-9 sm:h-14";
+  const imageWidth = size === "sm" ? 144 : 164;
+  const imageHeight = size === "sm" ? 40 : 48;
 
   const googleBadgeUrl =
     "https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg";
@@ -22,7 +22,7 @@ export default function StoreBadges({
 
   return (
     <div
-      className={`flex ${stacked ? "flex-col" : "flex-wrap"} items-center justify-center gap-3 ${className}`}
+      className={`flex ${stacked ? "flex-col" : "flex-nowrap"} items-center justify-center gap-2 sm:gap-3 ${className}`}
     >
       <a
         href="#"

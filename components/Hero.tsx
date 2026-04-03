@@ -74,7 +74,7 @@ export default function Hero() {
         className="pointer-events-none absolute bottom-10 right-1/3 h-60 w-60 rounded-full bg-blue-100/60 blur-3xl"
       />
       {/* Left side image (inverted) */}
-      <div className="pointer-events-none absolute left-[-20%] top-[13%] z-30 flex h-[540px] w-[68%] items-start scale-x-[-1] lg:left-[-13%] lg:h-[860px] lg:w-[56%]">
+      <div className="pointer-events-none absolute z-[2] hidden items-start scale-x-[-1] lg:left-[-18%] lg:top-[24%] lg:flex lg:h-[600px] lg:w-[520px] xl:left-[-10%] xl:top-[23%] xl:h-[720px] xl:w-[640px] min-[1320px]:left-[-4.7%] min-[1320px]:top-[21.8%] min-[1320px]:h-[860px] min-[1320px]:w-[760px]" aria-hidden="true">
         <Image
           src="/right-image.png"
           alt="decoration left"
@@ -84,7 +84,7 @@ export default function Hero() {
       </div>
 
       {/* Right side image */}
-      <div className="pointer-events-none absolute right-[-20%] top-[13%] z-30 flex h-[540px] w-[68%] items-start lg:right-[-13%] lg:h-[860px] lg:w-[56%]">
+      <div className="pointer-events-none absolute z-[2] hidden items-start lg:right-[-18%] lg:top-[24%] lg:flex lg:h-[600px] lg:w-[520px] xl:right-[-10%] xl:top-[23%] xl:h-[720px] xl:w-[640px] min-[1320px]:right-[-4.7%] min-[1320px]:top-[21.8%] min-[1320px]:h-[860px] min-[1320px]:w-[760px]" aria-hidden="true">
         <Image
           src="/right-image.png"
           alt="decoration right"
@@ -93,8 +93,8 @@ export default function Hero() {
         />
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 top-[42.7%] h-[480px] rounded-b-[5rem] bg-[linear-gradient(to_bottom,rgba(217,226,255,0.28)_0%,rgba(67,102,192,0.62)_35%,rgba(18,26,56,0.92)_100%)] sm:rounded-b-[6rem]" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-white/65 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-[42.7%] z-[1] h-[480px] rounded-b-[5rem] bg-[linear-gradient(to_bottom,rgba(217,226,255,0.28)_0%,rgba(67,102,192,0.62)_35%,rgba(18,26,56,0.92)_100%)] sm:rounded-b-[6rem]" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-32 bg-gradient-to-b from-white/65 to-transparent" />
 
       <div className="relative z-10 mx-auto flex min-h-[86vh] w-full max-w-5xl flex-col items-center px-4 pb-10 pt-4 text-center sm:px-8">
         <div className="max-w-3xl">
@@ -159,10 +159,10 @@ export default function Hero() {
               ease: [0.22, 1, 0.36, 1],
               delay: 0.7,
             }}
-            className="mt-10 flex justify-center lg:hidden"
+            className="relative isolate z-[200] mt-10 flex justify-center lg:hidden"
           >
             <PhonePreview
-              className="h-[460px] w-[240px]"
+              className="relative z-[210] h-[420px] w-[220px] min-[430px]:h-[460px] min-[430px]:w-[240px]"
               imageSrc={homeScreenSrc}
             />
           </motion.div>
@@ -171,19 +171,19 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 4.2, repeat: Infinity, ease: "easeInOut" }}
-          className="relative mt-14 hidden h-[580px] w-full max-w-[980px] items-end justify-center lg:flex"
+          className="relative isolate z-[200] mt-14 hidden h-[580px] w-full max-w-[980px] items-end justify-center lg:flex"
         >
           <PhonePreview
-            className="absolute bottom-8 left-[116px] z-10"
+            className="absolute bottom-8 left-[116px] z-[210]"
             rotateClass="-rotate-[10deg]"
             imageSrc={bookingScreenSrc}
           />
           <PhonePreview
-            className="relative z-20 h-[580px] w-[300px]"
+            className="relative z-[220] h-[580px] w-[300px]"
             imageSrc={homeScreenSrc}
           />
           <PhonePreview
-            className="absolute bottom-8 right-[116px] z-10"
+            className="absolute bottom-8 right-[116px] z-[210]"
             rotateClass="rotate-[10deg]"
             imageSrc={bookingSuccessScreenSrc}
           />
