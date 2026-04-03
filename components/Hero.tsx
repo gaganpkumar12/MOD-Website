@@ -99,7 +99,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 top-[43.8%] z-[1] h-[480px] rounded-b-[5rem] bg-[linear-gradient(to_bottom,rgba(217,226,255,0.28)_0%,rgba(67,102,192,0.62)_35%,rgba(18,26,56,0.92)_100%)] sm:rounded-b-[6rem]" />
+      <div className="pointer-events-none absolute inset-x-0 top-[37%] z-[1] h-[480px] rounded-b-[5rem] bg-[linear-gradient(to_bottom,rgba(217,226,255,0.28)_0%,rgba(67,102,192,0.62)_35%,rgba(18,26,56,0.92)_100%)] sm:top-[43.8%] sm:rounded-b-[6rem]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-32 bg-gradient-to-b from-white/65 to-transparent" />
 
       <div className="relative z-10 mx-auto flex min-h-[86vh] w-full max-w-5xl flex-col items-center px-4 pb-10 pt-4 text-center sm:px-8">
