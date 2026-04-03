@@ -74,7 +74,10 @@ export default function Hero() {
         className="pointer-events-none absolute bottom-10 right-1/3 h-60 w-60 rounded-full bg-blue-100/60 blur-3xl"
       />
       {/* Left side image (inverted) */}
-      <div className="pointer-events-none absolute z-[2] hidden items-start scale-x-[-1] lg:left-[-18%] lg:top-[24%] lg:flex lg:h-[600px] lg:w-[520px] xl:left-[-10%] xl:top-[23%] xl:h-[720px] xl:w-[640px] min-[1320px]:left-[-4.7%] min-[1320px]:top-[21.8%] min-[1320px]:h-[860px] min-[1320px]:w-[760px]" aria-hidden="true">
+      <div
+        className="pointer-events-none absolute z-[2] hidden items-start scale-x-[-1] lg:left-[-18%] lg:top-[24%] lg:flex lg:h-[600px] lg:w-[520px] xl:left-[-10%] xl:top-[23%] xl:h-[720px] xl:w-[640px] min-[1320px]:left-[-4.7%] min-[1320px]:top-[21.4%] min-[1320px]:h-[860px] min-[1320px]:w-[760px]"
+        aria-hidden="true"
+      >
         <Image
           src="/right-image.png"
           alt="decoration left"
@@ -84,7 +87,10 @@ export default function Hero() {
       </div>
 
       {/* Right side image */}
-      <div className="pointer-events-none absolute z-[2] hidden items-start lg:right-[-18%] lg:top-[24%] lg:flex lg:h-[600px] lg:w-[520px] xl:right-[-10%] xl:top-[23%] xl:h-[720px] xl:w-[640px] min-[1320px]:right-[-4.7%] min-[1320px]:top-[21.8%] min-[1320px]:h-[860px] min-[1320px]:w-[760px]" aria-hidden="true">
+      <div
+        className="pointer-events-none absolute z-[2] hidden items-start lg:right-[-18%] lg:top-[24%] lg:flex lg:h-[600px] lg:w-[520px] xl:right-[-10%] xl:top-[23%] xl:h-[720px] xl:w-[640px] min-[1320px]:right-[-4.7%] min-[1320px]:top-[21.4%] min-[1320px]:h-[860px] min-[1320px]:w-[760px]"
+        aria-hidden="true"
+      >
         <Image
           src="/right-image.png"
           alt="decoration right"
@@ -130,8 +136,8 @@ export default function Hero() {
             }}
             className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-slate-600"
           >
-            Book verified professionals for a spotless home - all in just three
-            taps.
+            Book verified professionals for a spotless home - all in just 3
+            taps
           </motion.p>
 
           <motion.div
