@@ -138,9 +138,9 @@ export default function Navbar() {
             <Image
               src={logoUrl}
               alt="Clean Fanatics logo"
-              width={82}
-              height={28}
-              className="h-7 w-auto object-contain"
+              width={108}
+              height={36}
+              className="h-9 w-auto object-contain"
             />
           </Link>
 
@@ -204,7 +204,6 @@ export default function Navbar() {
                   {item.label}
                 </a>
               ))}
-              
             </div>
           </motion.div>
         )}
