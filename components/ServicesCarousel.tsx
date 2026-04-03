@@ -3,6 +3,7 @@
 import { Sparkles } from "lucide-react";
 import Image from "next/image";
 import { useMemo } from "react";
+import StoreBadges from "./StoreBadges";
 
 interface ServiceItem {
   name: string;
@@ -58,7 +59,8 @@ export default function ServicesCarousel() {
             Book trusted cleaning help
           </h2>
           <p className="mt-3 text-base font-semibold text-slate-500 sm:text-lg">
-            From deep cleans to daily upkeep, CleanFanatics&apos;s got you covered
+            From deep cleans to daily upkeep, CleanFanatics&apos;s got you
+            covered
           </p>
         </div>
       </div>
@@ -68,6 +70,18 @@ export default function ServicesCarousel() {
           {loopedServices.map((service, index) => (
             <ServiceCard key={`${service.name}-${index}`} service={service} />
           ))}
+        </div>
+      </div>
+
+      <div className="mx-auto mt-10 w-full max-w-4xl px-4 sm:px-8">
+        <div className="rounded-3xl border border-sky-200 bg-sky-50 px-6 py-8 text-center shadow-lg shadow-sky-100/70 sm:px-8">
+          <p className="mx-auto max-w-2xl text-sm leading-relaxed text-slate-700 sm:text-base">
+            Download the app to book faster, track your service, and keep your
+            next clean one tap away.
+          </p>
+          <div className="mt-6 flex justify-center">
+            <StoreBadges size="sm" />
+          </div>
         </div>
       </div>
 

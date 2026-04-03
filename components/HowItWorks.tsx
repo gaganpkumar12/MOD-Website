@@ -88,16 +88,20 @@ function StepStackCard({ step, index, activeIndex }: StepCardProps) {
             </p>
 
             {/* Details List */}
-            <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
+            <ul className="mt-6 space-y-2">
               {step.details.map((detail) => (
-                <div
+                <li
                   key={detail}
-                  className="rounded-xl border border-sky-100 bg-sky-50/50 px-4 py-3 text-xs font-semibold text-slate-700"
+                  className="flex items-start gap-2 text-sm text-slate-600"
                 >
-                  {detail}
-                </div>
+                  <span
+                    aria-hidden
+                    className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-sky-500"
+                  />
+                  <span>{detail}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </div>
@@ -188,7 +192,7 @@ export default function HowItWorks() {
                   />
                 </div>
               </div>
-              <span className="inline-flex rounded-full bg-sky-500 px-4 py- text-xs font-black uppercase tracking-wider text-white">
+              <span className="inline-flex rounded-full bg-sky-500 px-4 py-2 text-xs font-black uppercase tracking-wider text-white">
                 Step {index + 1}
               </span>
               <h3 className="font-display mt-4 text-2xl font-black uppercase leading-tight text-brand-dark sm:text-3xl">
@@ -197,16 +201,20 @@ export default function HowItWorks() {
               <p className="mt-4 text-sm leading-relaxed text-slate-600 sm:text-base">
                 {step.description}
               </p>
-              <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
+              <ul className="mt-6 space-y-2">
                 {step.details.map((detail) => (
-                  <div
+                  <li
                     key={`${step.title}-${detail}`}
-                    className="rounded-xl border border-sky-100 bg-sky-50/50 px-4 py-3 text-xs font-semibold text-slate-700"
+                    className="flex items-start gap-2 text-sm text-slate-600"
                   >
-                    {detail}
-                  </div>
+                    <span
+                      aria-hidden
+                      className="mt-1 inline-block h-1.5 w-1.5 rounded-full bg-sky-500"
+                    />
+                    <span>{detail}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </article>
           ))}
         </div>
