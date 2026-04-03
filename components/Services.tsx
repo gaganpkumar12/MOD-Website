@@ -221,7 +221,7 @@ export default function Services() {
                 <p className="text-3xl font-black text-sky-600">
                   Clean Fanatics
                 </p>
-                <StoreBadges className="mt-3" size="sm" stacked />
+                <StoreBadges className="mt-3" size="lg" stacked />
               </div>
             </div>
           ) : null}

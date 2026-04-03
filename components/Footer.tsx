@@ -59,7 +59,7 @@ export default function Footer() {
       <p className="text-3xl font-bold text-sky-600">
         Clean Fanatics
       </p>
-      <StoreBadges className="mt-3" size="sm" stacked />
+      <StoreBadges className="mt-3" size="lg" stacked />
     </div>
   );
 
@@ -113,7 +113,7 @@ export default function Footer() {
             Professional cleaning at your fingertips, whenever you need it.
           </p>
           <div className="mt-10 flex justify-center">
-            <StoreBadges />
+            <StoreBadges size="lg" />
           </div>
         </div>
 

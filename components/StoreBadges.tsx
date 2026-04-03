@@ -2,7 +2,7 @@ import Image from "next/image";
 
 type StoreBadgesProps = {
   className?: string;
-  size?: "sm" | "md";
+  size?: "sm" | "md" | "lg";
   stacked?: boolean;
 };
 
@@ -11,9 +11,14 @@ export default function StoreBadges({
   size = "md",
   stacked = false,
 }: StoreBadgesProps) {
-  const imageHeightClass = size === "sm" ? "h-9 sm:h-11" : "h-9 sm:h-14";
-  const imageWidth = size === "sm" ? 144 : 164;
-  const imageHeight = size === "sm" ? 40 : 48;
+  const imageHeightClass =
+    size === "sm"
+      ? "h-9 sm:h-11"
+      : size === "lg"
+        ? "h-11 sm:h-16"
+        : "h-9 sm:h-14";
+  const imageWidth = size === "sm" ? 144 : size === "lg" ? 196 : 164;
+  const imageHeight = size === "sm" ? 40 : size === "lg" ? 60 : 48;
 
   const googleBadgeUrl =
     "https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg";

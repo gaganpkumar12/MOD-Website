@@ -83,7 +83,7 @@ export default function WhyCleanFanatics() {
               next clean one tap away.
             </p>
             <div className="mt-6 flex justify-center">
-              <StoreBadges size="md" />
+              <StoreBadges size="lg" />
             </div>
           </div>
         </ScrollReveal>

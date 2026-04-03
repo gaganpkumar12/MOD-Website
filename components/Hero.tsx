@@ -150,7 +150,7 @@ export default function Hero() {
             }}
             className="mt-8 flex flex-wrap items-center justify-center gap-3"
           >
-            <StoreBadges />
+            <StoreBadges size="lg" />
           </motion.div>
 
           <p className="mx-auto mt-8 max-w-lg text-xl font-medium text-slate-500">
