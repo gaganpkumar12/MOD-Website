@@ -21,36 +21,39 @@ export default function StoreBadges({
     "https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg";
 
   return (
-    <div
-      className={`flex ${stacked ? "flex-col" : "flex-nowrap"} items-center justify-center gap-2 sm:gap-3 ${className}`}
-    >
-      <a
-        href="#"
-        className="inline-flex cursor-pointer transition-transform duration-200 hover:scale-[1.02]"
+    <div className="flex flex-col items-center gap-3">
+      <p className="text-lg font-semibold text-gray-600">Coming Soon</p>
+      <div
+        className={`flex ${stacked ? "flex-col" : "flex-nowrap"} items-center justify-center gap-2 sm:gap-3 ${className}`}
       >
-        <Image
-          src={googleBadgeUrl}
-          alt="Get it on Google Play"
-          width={imageWidth}
-          height={imageHeight}
-          unoptimized
-          className={`${imageHeightClass} w-auto drop-shadow-2xl`}
-        />
-      </a>
+        <a
+          href="#"
+          className="inline-flex cursor-pointer transition-transform duration-200 hover:scale-[1.02]"
+        >
+          <Image
+            src={googleBadgeUrl}
+            alt="Get it on Google Play"
+            width={imageWidth}
+            height={imageHeight}
+            unoptimized
+            className={`${imageHeightClass} w-auto drop-shadow-2xl grayscale opacity-60`}
+          />
+        </a>
 
-      <a
-        href="#"
-        className="inline-flex cursor-pointer transition-transform duration-200 hover:scale-[1.02]"
-      >
-        <Image
-          src={appStoreBadgeUrl}
-          alt="Download on the App Store"
-          width={imageWidth}
-          height={imageHeight}
-          unoptimized
-          className={`${imageHeightClass} w-auto drop-shadow-2xl`}
-        />
-      </a>
+        <a
+          href="#"
+          className="inline-flex cursor-pointer transition-transform duration-200 hover:scale-[1.02]"
+        >
+          <Image
+            src={appStoreBadgeUrl}
+            alt="Download on the App Store"
+            width={imageWidth}
+            height={imageHeight}
+            unoptimized
+            className={`${imageHeightClass} w-auto drop-shadow-2xl grayscale opacity-60`}
+          />
+        </a>
+      </div>
     </div>
   );
 }
