@@ -23,7 +23,9 @@ export async function submitEarlyAccessRequest(
   name: string,
   phone: string,
 ): Promise<EarlyAccessResponse> {
-  const endpoint = "/api/early-access";
+  const endpoint =
+    process.env.NEXT_PUBLIC_EARLY_ACCESS_ENDPOINT ||
+    "/early-access-proxy.php";
   const payload = {
     action: "early_access_request",
     name,

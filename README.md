@@ -24,23 +24,23 @@ Create a local env file from [.env.example](.env.example):
 cp .env.example .env.local
 ```
 
-Set this required variable for early-access form submissions:
+For static hosting, the app exports into the `out` folder and submits early-access requests to `/early-access-proxy.php` by default.
+
+Optional: override submit endpoint in env if needed:
 
 ```env
-EARLY_ACCESS_WEBHOOK_URL=https://flow.zoho.in/.../incoming?zapikey=...&isdebug=false
+NEXT_PUBLIC_EARLY_ACCESS_ENDPOINT=https://your-domain.com/early-access-proxy.php
 ```
 
-The app submits through `/api/early-access`.
+If you leave it empty, the default `/early-access-proxy.php` is used.
 
-For Vercel deployments, add `EARLY_ACCESS_WEBHOOK_URL` in Project Settings -> Environment Variables and redeploy.
+The file `public/early-access-proxy.php` must have the webhook URL configured on your host:
 
-Optional: if you intentionally need a static export build, set:
-
-```env
-STATIC_EXPORT=true
+```php
+$webhookUrl = getenv('EARLY_ACCESS_WEBHOOK_URL');
 ```
 
-Leave `STATIC_EXPORT` unset for Vercel so API routes work.
+On Hostinger, set `EARLY_ACCESS_WEBHOOK_URL` in your PHP hosting environment (or replace `getenv(...)` with your webhook URL in that PHP file if env injection is not available).
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
