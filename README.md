@@ -16,6 +16,22 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Environment Variables
+
+Create a local env file from [.env.example](.env.example):
+
+```bash
+cp .env.example .env.local
+```
+
+Set this required variable for early-access form submissions:
+
+```env
+EARLY_ACCESS_WEBHOOK_URL=https://flow.zoho.in/.../incoming?zapikey=...&isdebug=false
+```
+
+The app submits through `/api/early-access`.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.

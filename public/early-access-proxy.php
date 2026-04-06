@@ -24,7 +24,13 @@ if (!$data || empty($data['name']) || empty($data['phone'])) {
     exit();
 }
 
-$webhookUrl = 'https://flow.zoho.in/60023911678/flow/webhook/incoming?zapikey=1001.8ff20ea9300432da58d1ac4cabbca35a.030f5250808caaf75e0d8ac700d03685&isdebug=false';
+$webhookUrl = getenv('EARLY_ACCESS_WEBHOOK_URL');
+
+if (!$webhookUrl) {
+    http_response_code(500);
+    echo json_encode(array('message' => 'Webhook is not configured on the server'));
+    exit();
+}
 
 $ch = curl_init($webhookUrl);
 curl_setopt($ch, CURLOPT_POST, true);

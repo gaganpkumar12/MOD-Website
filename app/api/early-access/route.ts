@@ -25,8 +25,7 @@ function getIstTimestamp(date: Date): string {
 
 export async function POST(request: Request) {
   try {
-    const webhookUrl =
-      "https://flow.zoho.in/60023911678/flow/webhook/incoming?zapikey=1001.8ff20ea9300432da58d1ac4cabbca35a.030f5250808caaf75e0d8ac700d03685&isdebug=false";
+    const webhookUrl = process.env.EARLY_ACCESS_WEBHOOK_URL;
 
     if (!webhookUrl) {
       return NextResponse.json(

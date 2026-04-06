@@ -23,29 +23,40 @@ export async function submitEarlyAccessRequest(
   name: string,
   phone: string,
 ): Promise<EarlyAccessResponse> {
-  const endpoint =
-    process.env.NEXT_PUBLIC_EARLY_ACCESS_ENDPOINT || "/early-access-proxy.php";
+  const endpoint = "/api/early-access";
+  const payload = {
+    action: "early_access_request",
+    name,
+    phone,
+    timestamp: getIstTimestamp(new Date()),
+  };
 
   const response = await fetch(endpoint, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      action: "early_access_request",
-      name,
-      phone,
-      timestamp: getIstTimestamp(new Date()),
-    }),
+    body: JSON.stringify(payload),
   });
 
-  if (!response.ok) {
-    const text = await response.text();
-    return {
-      ok: false,
-      message: text?.slice(0, 200) || "Submission failed. Please try again.",
-    };
+  if (response.ok) {
+    return { ok: true, message: "Request submitted successfully." };
   }
 
-  return { ok: true, message: "Request submitted successfully." };
+  let message = "Submission failed. Please try again.";
+  const contentType = response.headers.get("content-type") || "";
+
+  if (contentType.includes("application/json")) {
+    const body = (await response.json()) as { message?: string };
+    if (body?.message) {
+      message = body.message;
+    }
+  } else {
+    const text = await response.text();
+    if (text) {
+      message = text.slice(0, 200);
+    }
+  }
+
+  return { ok: false, message };
 }
