@@ -134,7 +134,7 @@ export default function Navbar() {
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
 
-          <Link href="#" className="inline-flex items-center justify-center">
+          <Link href="/" className="inline-flex items-center justify-center">
             <Image
               src={logoUrl}
               alt="Clean Fanatics logo"
@@ -160,7 +160,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          <Link href="#" className="inline-flex items-center justify-center">
+          <Link href="/" className="inline-flex items-center justify-center">
             <Image
               src={logoUrl}
               alt="Clean Fanatics logo"
