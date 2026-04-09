@@ -23,9 +23,13 @@ export async function submitEarlyAccessRequest(
   name: string,
   phone: string,
 ): Promise<EarlyAccessResponse> {
-  const endpoint =
-    process.env.NEXT_PUBLIC_EARLY_ACCESS_ENDPOINT ||
-    "/early-access-proxy.php";
+  const endpoints =
+    process.env.NODE_ENV === "development"
+      ? ["http://localhost:3000/api/early-access"]
+      : [
+          "/early-access-proxy.php",
+          "https://househelp.cleanfanatics.in/early-access-proxy.php",
+        ];
   const payload = {
     action: "early_access_request",
     name,
@@ -33,13 +37,40 @@ export async function submitEarlyAccessRequest(
     timestamp: getIstTimestamp(new Date()),
   };
 
-  const response = await fetch(endpoint, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(payload),
-  });
+  let response: Response | undefined;
+  let lastErrorMessage = "";
+
+  for (const endpoint of endpoints) {
+    try {
+      response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      // Retry with the absolute domain endpoint only if the relative path is unavailable.
+      if (response.ok || !/^\//.test(endpoint)) {
+        break;
+      }
+
+      const contentType = response.headers.get("content-type") || "";
+      if (!contentType.includes("application/json")) {
+        continue;
+      }
+    } catch (error) {
+      lastErrorMessage =
+        error instanceof Error ? error.message : "Unknown network error";
+    }
+  }
+
+  if (!response) {
+    return {
+      ok: false,
+      message: `Network error while submitting. ${lastErrorMessage || "Please try again."}`,
+    };
+  }
 
   if (response.ok) {
     return { ok: true, message: "Request submitted successfully." };

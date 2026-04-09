@@ -9,6 +9,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
 
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    http_response_code(200);
+    echo json_encode(array(
+        'message' => 'Early access proxy is running',
+        'domain' => 'househelp.cleanfanatics.in'
+    ));
+    exit();
+}
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     echo json_encode(array('message' => 'Method not allowed'));
@@ -24,13 +33,67 @@ if (!$data || empty($data['name']) || empty($data['phone'])) {
     exit();
 }
 
-$webhookUrl = 'https://flow.zoho.in/60023911678/flow/webhook/incoming?zapikey=1001.8ff20ea9300432da58d1ac4cabbca35a.030f5250808caaf75e0d8ac700d03685&isdebug=false';
+$configPath = __DIR__ . '/early-access-config.php';
+if (is_file($configPath)) {
+    require_once $configPath;
+}
+
+function resolveWebhookUrl() {
+    if (defined('EARLY_ACCESS_WEBHOOK_URL') && EARLY_ACCESS_WEBHOOK_URL !== '') {
+        return trim(EARLY_ACCESS_WEBHOOK_URL);
+    }
+
+    $value = getenv('EARLY_ACCESS_WEBHOOK_URL');
+    if ($value) {
+        return trim($value);
+    }
+
+    if (!empty($_ENV['EARLY_ACCESS_WEBHOOK_URL'])) {
+        return trim($_ENV['EARLY_ACCESS_WEBHOOK_URL']);
+    }
+
+    if (!empty($_SERVER['EARLY_ACCESS_WEBHOOK_URL'])) {
+        return trim($_SERVER['EARLY_ACCESS_WEBHOOK_URL']);
+    }
+
+    $envPaths = array(
+        __DIR__ . '/.env',
+        dirname(__DIR__) . '/.env',
+    );
+
+    foreach ($envPaths as $envPath) {
+        if (!is_file($envPath) || !is_readable($envPath)) {
+            continue;
+        }
+
+        $envData = @parse_ini_file($envPath, false, INI_SCANNER_RAW);
+        if ($envData && !empty($envData['EARLY_ACCESS_WEBHOOK_URL'])) {
+            return trim($envData['EARLY_ACCESS_WEBHOOK_URL']);
+        }
+    }
+
+    return '';
+}
+
+$webhookUrl = resolveWebhookUrl();
+
+if (!$webhookUrl) {
+    http_response_code(500);
+    echo json_encode(array(
+        'message' => 'Webhook is not configured on the server',
+        'hint' => 'Set EARLY_ACCESS_WEBHOOK_URL in public/early-access-config.php or server env'
+    ));
+    exit();
+}
 
 $ch = curl_init($webhookUrl);
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_TIMEOUT, 20);
+curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10);
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 
 $response = curl_exec($ch);
 $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);

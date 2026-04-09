@@ -1,0 +1,4 @@
+<?php
+// Hostinger static + PHP deployment config.
+// Replace this URL with your Zoho Flow webhook URL.
+define('EARLY_ACCESS_WEBHOOK_URL', 'https://flow.zoho.in/60023911678/flow/webhook/incoming?zapikey=1001.8ff20ea9300432da58d1ac4cabbca35a.030f5250808caaf75e0d8ac700d03685&isdebug=false');
