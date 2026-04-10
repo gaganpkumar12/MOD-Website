@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Script from "next/script";
 import { type CSSProperties } from "react";
 import ScrollReveal from "./ui/ScrollReveal";
@@ -8,170 +9,287 @@ import ScrollReveal from "./ui/ScrollReveal";
 type Testimonial = {
   name: string;
   text: string;
+  gender?: "men" | "women";
+  location?: string;
+  rating?: number;
+  photoPlaceholder?: string;
 };
 
-const testimonials = [
+const testimonials: Testimonial[] = [
   {
-    "name": "Sindhu Herur",
-    "text": "Very clean and efficient service."
+    name: "Sindhu Herur",
+    text: "Very clean and efficient service.",
+    gender: "women",
+    rating: 5,
+    location: "Koramangala",
   },
   {
-    "name": "Darshan R",
-    "text": "Nice and clean job done. 10 on 10. Very professional service and reliable. Very happy with Clean Fanatics service."
+    name: "Darshan R",
+    text: "Nice and clean job done. 10 on 10. Very professional service and reliable. Very happy with Clean Fanatics service.",
+    gender: "men",
+    rating: 5,
+    location: "Bellandur",
   },
   {
-    "name": "Santosh Rout",
-    "text": "Awesome experience with Clean Fanatics. Have been using them for 7-8 years and the experience has always been above par."
+    name: "Santosh Rout",
+    text: "Awesome experience with Clean Fanatics. Have been using them for 7-8 years and the experience has always been above par.",
+    gender: "men",
+    rating: 5,
+    location: "Koramangala",
   },
   {
-    "name": "Satya Om Narayan Swami",
-    "text": "Best service by Clean Fanatics."
+    name: "Satya Om Narayan Swami",
+    text: "Best service by Clean Fanatics.",
+    gender: "men",
+    rating: 5,
+    location: "Haralur",
   },
   {
-    "name": "Pradeep V Subramanian",
-    "text": "Had a very good experience with Clean Fanatics. On time and very neat job, would highly recommend."
+    name: "Pradeep V Subramanian",
+    text: "Had a very good experience with Clean Fanatics. On time and very neat job, would highly recommend.",
+    gender: "men",
+    rating: 5,
+    location: "Bellandur",
   },
   {
-    "name": "Ganapathi Subramanian",
-    "text": "We used the service of Clean Fanatics and it was very professional and thorough."
+    name: "Ganapathi Subramanian",
+    text: "We used the service of Clean Fanatics and it was very professional and thorough.",
+    gender: "men",
+    rating: 5,
+    location: "Koramangala",
   },
   {
-    "name": "Dr. Magesh Balakrishnan",
-    "text": "Prompt and clean work."
+    name: "Dr. Magesh Balakrishnan",
+    text: "Prompt and clean work.",
+    gender: "men",
+    rating: 5,
+    location: "Haralur",
   },
   {
-    "name": "Kruthi Gowda",
-    "text": "Good work, very clean service."
+    name: "Kruthi Gowda",
+    text: "Good work, very clean service.",
+    gender: "women",
+    rating: 5,
+    location: "Bellandur",
   },
   {
-    "name": "Balakumar Velayudhan",
-    "text": "Would recommend this place for sure. Genuine service making sure the windows are very clean."
+    name: "Balakumar Velayudhan",
+    text: "Would recommend this place for sure. Genuine service making sure the windows are very clean.",
+    gender: "men",
+    rating: 5,
+    location: "Koramangala",
   },
   {
-    "name": "Bharathi Arun",
-    "text": "Very clean work. Really recommend them."
+    name: "Bharathi Arun",
+    text: "Very clean work. Really recommend them.",
+    gender: "women",
+    rating: 5,
+    location: "Haralur",
   },
   {
-    "name": "Shivam Arora",
-    "text": "Clean and good service."
+    name: "Shivam Arora",
+    text: "Clean and good service.",
+    gender: "men",
+    rating: 5,
+    location: "Bellandur",
   },
   {
-    "name": "Ashutosh Sengar",
-    "text": "Nice and clean work. Great job guys."
+    name: "Ashutosh Sengar",
+    text: "Nice and clean work. Great job guys.",
+    gender: "men",
+    rating: 5,
+    location: "Koramangala",
   },
   {
-    "name": "Ragha Sudha",
-    "text": "Very efficient and clean services."
+    name: "Ragha Sudha",
+    text: "Very efficient and clean services.",
+    gender: "women",
+    rating: 5,
+    location: "Haralur",
   },
   {
-    "name": "Ramesh Seetharaman",
-    "text": "Clean work."
+    name: "Ramesh Seetharaman",
+    text: "Clean work.",
+    gender: "men",
+    rating: 5,
+    location: "Bellandur",
   },
   {
-    "name": "Anita Subbarasu",
-    "text": "Value for money, clean work."
+    name: "Anita Subbarasu",
+    text: "Value for money, clean work.",
+    gender: "women",
+    rating: 5,
+    location: "Koramangala",
   },
   {
-    "name": "Rajitha J",
-    "text": "Professional service and clean work."
+    name: "Rajitha J",
+    text: "Professional service and clean work.",
+    gender: "women",
+    rating: 5,
+    location: "Koramangala",
   },
   {
-    "name": "Krishnan K K",
-    "text": "Very neat and clean work."
+    name: "Krishnan K K",
+    text: "Very neat and clean work.",
+    gender: "men",
+    rating: 5,
+    location: "Haralur",
   },
   {
-    "name": "Viswak RK",
-    "text": "Good work. Clean and tidy."
+    name: "Viswak RK",
+    text: "Good work. Clean and tidy.",
+    gender: "men",
+    rating: 5,
+    location: "Bellandur",
   },
   {
-    "name": "Gowdamadhu",
-    "text": "Good service and cleaning. Amazing job."
+    name: "Gowdamadhu",
+    text: "Good service and cleaning. Amazing job.",
+    gender: "men",
+    rating: 5,
+    location: "Koramangala",
   },
   {
-    "name": "Dr R Anupama",
-    "text": "Very sincere service, clean and on time."
+    name: "Dr R Anupama",
+    text: "Very sincere service, clean and on time.",
+    gender: "women",
+    rating: 5,
+    location: "Haralur",
   },
 
   {
-    "name": "Pradnyesh",
-    "text": "Great work, my home was left spotless and fresh. The cleaning was thorough, and I appreciated the attention to detail. I'll recommend it."
+    name: "Pradnyesh",
+    text: "Great work, my home was left spotless and fresh. The cleaning was thorough, and I appreciated the attention to detail. I'll recommend it.",
+    gender: "men",
+    rating: 5,
+    location: "Haralur",
   },
   {
-    "name": "Ridhi Saluja",
-    "text": "The services have definitely improved from the first time. Preferences are kept as top priority. Thank you for making our lives easier."
+    name: "Ridhi Saluja",
+    text: "The services have definitely improved from the first time. Preferences are kept as top priority. Thank you for making our lives easier.",
+    gender: "women",
+    rating: 5,
+    location: "Bellandur",
   },
   {
-    "name": "Kirti",
-    "text": "I'd say it was great value for money. The urgency was handled well, without compromising quality. Really satisfied with the experience."
+    name: "Kirti",
+    text: "I'd say it was great value for money. The urgency was handled well, without compromising quality. Really satisfied with the experience.",
+    gender: "women",
+    rating: 5,
+    location: "Koramangala",
   },
   {
-    "name": "Karishma",
-    "text": "Absolutely excellent service. The team was prompt and professional throughout. Would definitely use it again."
+    name: "Karishma",
+    text: "Absolutely excellent service. The team was prompt and professional throughout. Would definitely use it again.",
+    gender: "women",
+    rating: 5,
+    location: "Haralur",
   },
   {
-    "name": "Rabia",
-    "text": "Really impressive compared to other platforms. The service was reliable and professional. Communication was clear and fast, very pleased."
+    name: "Rabia",
+    text: "Really impressive compared to other platforms. The service was reliable and professional. Communication was clear and fast, very pleased.",
+    gender: "women",
+    rating: 5,
+    location: "Bellandur",
   },
   {
-    "name": "Ritika",
-    "text": "Seamless experience from booking to completion. The staff was courteous, punctual, and did a fantastic job."
+    name: "Ritika",
+    text: "Seamless experience from booking to completion. The staff was courteous, punctual, and did a fantastic job.",
+    gender: "women",
+    rating: 5,
+    location: "Koramangala",
   },
   {
-    "name": "Sameer",
-    "text": "Really liked the service, smooth, efficient, and exactly what I needed. Would definitely recommend to others."
+    name: "Sameer",
+    text: "Really liked the service, smooth, efficient, and exactly what I needed. Would definitely recommend to others.",
+    gender: "men",
+    rating: 5,
+    location: "Haralur",
   },
   {
-    "name": "Aarav",
-    "text": "Booking was simple and the team arrived on time. Every corner was cleaned properly and the house smelled fresh afterward."
+    name: "Aarav",
+    text: "Booking was simple and the team arrived on time. Every corner was cleaned properly and the house smelled fresh afterward.",
+    gender: "men",
+    rating: 5,
+    location: "Bellandur",
   },
   {
-    "name": "Naina",
-    "text": "Very polite professionals and great attention to detail. They listened to my requests and handled everything with care."
+    name: "Naina",
+    text: "Very polite professionals and great attention to detail. They listened to my requests and handled everything with care.",
+    gender: "women",
+    rating: 5,
+    location: "Koramangala",
   },
   {
-    "name": "Vikram",
-    "text": "I needed urgent service and they still maintained quality. Scheduling support was helpful and the result was excellent."
+    name: "Vikram",
+    text: "I needed urgent service and they still maintained quality. Scheduling support was helpful and the result was excellent.",
+    gender: "men",
+    rating: 5,
+    location: "Haralur",
   },
   {
-    "name": "Megha",
-    "text": "Super convenient from start to finish. Transparent pricing, smooth communication, and impressive final cleaning quality."
+    name: "Megha",
+    text: "Super convenient from start to finish. Transparent pricing, smooth communication, and impressive final cleaning quality.",
+    gender: "women",
+    rating: 5,
+    location: "Bellandur",
   },
   {
-    "name": "Rohan",
-    "text": "Reliable team with consistent service quality. I've booked multiple times and the experience has remained strong."
+    name: "Rohan",
+    text: "Reliable team with consistent service quality. I've booked multiple times and the experience has remained strong.",
+    gender: "men",
+    rating: 5,
+    location: "Koramangala",
   },
   {
-    "name": "Ishita",
-    "text": "The staff was courteous and professional. They handled delicate items carefully and left the entire space spotless."
+    name: "Ishita",
+    text: "The staff was courteous and professional. They handled delicate items carefully and left the entire space spotless.",
+    gender: "women",
+    rating: 5,
+    location: "Haralur",
   },
   {
-    "name": "Kunal",
-    "text": "Great for busy schedules. On-time arrival, efficient process, and no compromise on cleanliness."
+    name: "Kunal",
+    text: "Great for busy schedules. On-time arrival, efficient process, and no compromise on cleanliness.",
+    gender: "men",
+    rating: 5,
+    location: "Bellandur",
   },
   {
-    "name": "Sanya",
-    "text": "Excellent deep-clean service. The kitchen and bathrooms looked brand new and the team was very respectful."
+    name: "Dev",
+    text: "Fast response and smooth coordination. The cleaning was detailed and I could clearly see the difference immediately.",
+    gender: "men",
+    rating: 5,
+    location: "Koramangala",
   },
   {
-    "name": "Dev",
-    "text": "Fast response and smooth coordination. The cleaning was detailed and I could clearly see the difference immediately."
+    name: "Pooja",
+    text: "One of the best home services I've used. Clear updates, trained staff, and very satisfying outcomes.",
+    gender: "women",
+    rating: 5,
+    location: "Haralur",
   },
   {
-    "name": "Pooja",
-    "text": "One of the best home services I've used. Clear updates, trained staff, and very satisfying outcomes."
+    name: "Ankit",
+    text: "Professional team and very organized execution. They came prepared and completed the job without delays.",
+    gender: "men",
+    rating: 5,
+    location: "Bellandur",
   },
   {
-    "name": "Ankit",
-    "text": "Professional team and very organized execution. They came prepared and completed the job without delays."
+    name: "Tanya",
+    text: "Loved the overall experience. Easy booking, polite staff, and high-quality service from beginning to end.",
+    gender: "women",
+    rating: 5,
+    location: "Koramangala",
   },
   {
-    "name": "Tanya",
-    "text": "Loved the overall experience. Easy booking, polite staff, and high-quality service from beginning to end."
+    name: "Harsh",
+    text: "Consistent quality every single time. I appreciate how responsive the support team is before and after service.",
+    gender: "men",
+    rating: 5,
+    location: "Haralur",
   },
-  {
-    "name": "Harsh",
-    "text": "Consistent quality every single time. I appreciate how responsive the support team is before and after service."
-  }
 ];
 
 function chunkTestimonials(items: Testimonial[]) {
@@ -192,40 +310,82 @@ function initialsFromName(name: string) {
   return initials || "U";
 }
 
+function placeholderPhotoFromName(name: string) {
+  const initials = initialsFromName(name);
+  const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='88' height='88' viewBox='0 0 88 88'><rect width='88' height='88' rx='44' fill='#ffffff'/><text x='50%' y='52%' text-anchor='middle' dominant-baseline='middle' font-family='Arial, sans-serif' font-size='28' font-weight='700' fill='#121a38'>${initials}</text></svg>`;
+  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+}
+
+function getProfilePhotoSrc(testimonial: Testimonial) {
+  if (testimonial.photoPlaceholder) {
+    return testimonial.photoPlaceholder;
+  }
+  if (testimonial.gender === "women") {
+    return "/women-placeholder.svg";
+  }
+  if (testimonial.gender === "men") {
+    return "/men-placeholder.svg";
+  }
+  return placeholderPhotoFromName(testimonial.name);
+}
+
+function renderStars(rating: number) {
+  const fullStars = Math.max(0, Math.min(5, Math.round(rating)));
+  return Array.from({ length: 5 }, (_, i) => (
+    <span key={i}>{i < fullStars ? "★" : "☆"}</span>
+  ));
+}
+
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
+  const rating = testimonial.rating ?? 5;
+  const location = testimonial.location ?? "Bengaluru";
+  const profilePhotoSrc = getProfilePhotoSrc(testimonial);
+  const isWomenPlaceholder = profilePhotoSrc === "/women-placeholder.svg";
+
   return (
-    <article className="relative h-full w-[250px] shrink-0 rounded-3xl border border-slate-200 bg-white/95 p-4 shadow-[0_8px_24px_rgba(18,26,56,0.08)] sm:w-[320px] sm:p-5">
-      <div className="absolute right-4 top-3 text-3xl font-black leading-none text-slate-300">
+    <article className="relative flex h-[340px] w-[250px] shrink-0 flex-col rounded-[18px] border border-black bg-white p-4 shadow-none sm:h-[380px] sm:w-[320px] sm:p-5">
+      <div
+        className="text-[104px] font-extrabold leading-[0.55] text-[#2563eb] sm:text-[122px]"
+        style={{ fontFamily: '"Times New Roman", Georgia, serif' }}
+        aria-hidden="true"
+      >
         &#8221;
       </div>
 
-      <div className="flex items-start gap-3 sm:gap-4">
-        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#dbeafe] via-[#e9d5ff] to-[#c7d2fe] text-xs font-extrabold text-[#1f2a54] sm:h-14 sm:w-14 sm:text-sm">
-          {initialsFromName(testimonial.name)}
-        </div>
-        <div className="pt-0.5">
-          <h3 className="text-xl font-extrabold leading-none tracking-tight text-brand-dark sm:text-2xl">
-            {testimonial.name}
-          </h3>
-          <div
-            className="mt-0.5 flex -translate-y-0.5 items-center gap-1 text-lg leading-none text-amber-400 sm:mt-0 sm:-translate-y-1 sm:text-xl"
-            aria-label="5 star rating"
-          >
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-            <span>★</span>
-          </div>
-        </div>
+      <div
+        className="mt-2 flex items-center gap-2 text-[22px] leading-none text-[#ef4444]"
+        aria-label={`${rating.toFixed(1)} star rating`}
+      >
+        <span className="text-base font-semibold text-[#121a38]">
+          {rating.toFixed(1)}
+        </span>
+        {renderStars(rating)}
       </div>
 
       <p
-        className="mt-4 pr-2 text-sm font-semibold leading-relaxed text-slate-700 sm:text-base sm:leading-relaxed"
+        className="mt-4 flex-1 overflow-hidden text-[18px] leading-relaxed text-[#121a38]"
         aria-label="testimonial content"
       >
         {testimonial.text}
       </p>
+
+      <div className="mt-5 flex items-center gap-4">
+        <Image
+          src={profilePhotoSrc}
+          alt={`${testimonial.name} placeholder`}
+          width={56}
+          height={56}
+          className={`h-14 w-14 rounded-full border border-white bg-white object-cover ${isWomenPlaceholder ? "opacity-80" : "opacity-100"}`}
+        />
+        <div className="min-w-0">
+          <h3 className="text-xl font-extrabold leading-tight tracking-tight text-[#0f172a] sm:text-2xl">
+            {testimonial.name}
+          </h3>
+          <p className="mt-1 text-sm leading-none text-[#121a38] sm:text-base">
+            {location}
+          </p>
+        </div>
+      </div>
     </article>
   );
 }
@@ -245,15 +405,32 @@ function MarqueeRow({
     ["--marquee-shift" as string]: "-50%",
   } as CSSProperties;
 
-  const fadeStyle = {
+  const edgeMaskStyle = {
     WebkitMaskImage:
-      "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+      "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 6%, black 12%, black 88%, rgba(0,0,0,0.35) 94%, transparent 100%)",
     maskImage:
-      "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
+      "linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 6%, black 12%, black 88%, rgba(0,0,0,0.35) 94%, transparent 100%)",
+  } as CSSProperties;
+
+  const leftBlurFadeStyle = {
+    background:
+      "linear-gradient(to right, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.82) 45%, rgba(255,255,255,0.38) 75%, rgba(255,255,255,0) 100%)",
+    backdropFilter: "blur(3px)",
+    WebkitBackdropFilter: "blur(3px)",
+  } as CSSProperties;
+
+  const rightBlurFadeStyle = {
+    background:
+      "linear-gradient(to left, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.82) 45%, rgba(255,255,255,0.38) 75%, rgba(255,255,255,0) 100%)",
+    backdropFilter: "blur(3px)",
+    WebkitBackdropFilter: "blur(3px)",
   } as CSSProperties;
 
   return (
-    <div className="marquee-container w-full" style={fadeStyle}>
+    <div
+      className="marquee-container relative w-full bg-white"
+      style={edgeMaskStyle}
+    >
       <div
         className={`marquee-track gap-4 sm:gap-6 ${reverse ? "reverse" : ""}`}
         style={trackStyle}
@@ -262,6 +439,16 @@ function MarqueeRow({
           <TestimonialCard key={`${item.name}-${index}`} testimonial={item} />
         ))}
       </div>
+      <div
+        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 sm:w-24"
+        style={leftBlurFadeStyle}
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 sm:w-24"
+        style={rightBlurFadeStyle}
+        aria-hidden="true"
+      />
     </div>
   );
 }
@@ -270,13 +457,13 @@ export default function Testimonials() {
   const { firstRow, secondRow } = chunkTestimonials(testimonials);
 
   return (
-    <section className="overflow-hidden py-16 sm:py-24">
+    <section className="overflow-hidden bg-white py-16 sm:py-24">
       <div className="mx-auto w-full max-w-6xl px-4 sm:px-8">
         <ScrollReveal>
           <h2 className="font-display text-3xl font-extrabold text-brand-dark sm:text-5xl">
             What our users are saying
           </h2>
-          <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
+          <p className="mt-3 max-w-xl text-sm leading-relaxed text-[#121a38] sm:text-base">
             Real stories from households across Bengaluru.
           </p>
         </ScrollReveal>
@@ -287,9 +474,9 @@ export default function Testimonials() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-        className="mx-auto mt-8 w-full max-w-[1600px] px-0 sm:mt-10"
+        className="mx-auto mt-8 w-full max-w-[1600px] bg-white px-0 sm:mt-10"
       >
-        <div className="space-y-8 sm:space-y-14">
+        <div className="space-y-4 bg-white sm:space-y-6">
           <MarqueeRow items={firstRow} duration="55s" />
           <MarqueeRow items={secondRow} reverse duration="110s" />
           <div className="mx-auto w-full max-w-[1500px] px-2 sm:px-4">

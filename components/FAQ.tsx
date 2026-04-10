@@ -34,7 +34,7 @@ const faqs: FaqItem[] = [
   {
     question: "Which cities does Clean Fanatics operate in?",
     answer:
-      "Currently: Delhi NCR, Bengaluru, Mumbai, Hyderabad, and Chennai, with more cities launching soon.",
+      "Currently: Only some areas in Bengaluru with more areas, cities launching soon.",
   },
   {
     question: "Can I cancel or reschedule a booking?",
