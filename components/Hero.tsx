@@ -118,7 +118,6 @@ export default function Hero() {
           <div className="fixed inset-0 z-[999] grid h-[100dvh] w-full place-items-center bg-black/50 p-4">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               className="relative w-full max-w-md rounded-lg bg-white p-6 text-center shadow-xl sm:p-8"
             >
@@ -253,11 +252,11 @@ export default function Hero() {
         />
         {/* Left side image (inverted) */}
         <div
-          className="pointer-events-none absolute z-[2] hidden items-start scale-x-[-1] lg:left-[-18%] lg:top-[24%] lg:flex lg:h-[600px] lg:w-[520px] xl:left-[-10%] xl:top-[23%] xl:h-[720px] xl:w-[640px] min-[1320px]:left-[-4.7%] min-[1320px]:top-[23.2%] min-[1320px]:h-[860px] min-[1320px]:w-[760px]"
+          className="pointer-events-none absolute z-[2] hidden items-start lg:left-[-18%] lg:top-[24%] lg:flex lg:h-[600px] lg:w-[520px] xl:left-[-10%] xl:top-[23%] xl:h-[720px] xl:w-[640px] min-[1320px]:left-[-4.9%] min-[1320px]:top-[17.3%] min-[1320px]:h-[860px] min-[1320px]:w-[760px]"
           aria-hidden="true"
         >
           <Image
-            src="/right-image.png"
+            src="/left-image-cf.png"
             alt="decoration left"
             fill
             className="object-contain object-left object-top"
@@ -266,11 +265,11 @@ export default function Hero() {
 
         {/* Right side image */}
         <div
-          className="pointer-events-none absolute z-[2] hidden items-start lg:right-[-18%] lg:top-[24%] lg:flex lg:h-[600px] lg:w-[520px] xl:right-[-10%] xl:top-[23%] xl:h-[720px] xl:w-[640px] min-[1320px]:right-[-4.7%] min-[1320px]:top-[23.2%] min-[1320px]:h-[860px] min-[1320px]:w-[760px]"
+          className="pointer-events-none absolute z-[2] hidden items-start lg:right-[-18%] lg:top-[24%] lg:flex lg:h-[600px] lg:w-[520px] xl:right-[-10%] xl:top-[23%] xl3h-[720px] xl:w-[640px] min-[1320px]:right-[-4.7%] min-[1320px]:top-[17.3%] min-[1320px]:h-[860px] min-[1320px]:w-[760px]"
           aria-hidden="true"
         >
           <Image
-            src="/right-image.png"
+            src="/right-image-cf.png"
             alt="decoration right"
             fill
             className="object-contain object-right object-top"
