@@ -294,7 +294,7 @@ export default function Footer() {
           <div className="mt-12 border-t border-white/12 pb-10 pt-6 sm:pb-12">
             <p className="flex items-center justify-center gap-2 text-center text-sm text-sky-100/95">
               <Copyright className="h-4 w-4" />
-              2025 Clean Fanatics. All rights reserved.
+              2026 Clean Fanatics. All rights reserved.
             </p>
           </div>
         </div>

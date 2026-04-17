@@ -16,7 +16,7 @@ const words = [
   "YOUR",
   "DOORSTEP!",
 ];
-const homeScreenSrc = "/home.jpeg";
+const homeScreenSrc = "/home.png";
 const bookingScreenSrc = "/booking.jpeg";
 const bookingSuccessScreenSrc = "/booking%20success.jpeg";
 
