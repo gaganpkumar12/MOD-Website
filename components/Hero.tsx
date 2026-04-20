@@ -118,6 +118,7 @@ export default function Hero() {
           <div className="fixed inset-0 z-[999] grid h-[100dvh] w-full place-items-center bg-black/50 p-4">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               className="relative w-full max-w-md rounded-lg bg-white p-6 text-center shadow-xl sm:p-8"
             >

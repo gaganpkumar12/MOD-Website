@@ -4,6 +4,7 @@ type EarlyAccessPayload = {
   action?: string;
   name?: string;
   phone?: string;
+  device?: string;
   timestamp?: string;
 };
 

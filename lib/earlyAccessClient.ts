@@ -3,6 +3,35 @@ type EarlyAccessResponse = {
   message: string;
 };
 
+function detectDeviceType(): string {
+  if (typeof navigator === "undefined") {
+    return "Unknown";
+  }
+
+  const ua = navigator.userAgent.toLowerCase();
+  const platform = (navigator.platform || "").toLowerCase();
+  const touchPoints = navigator.maxTouchPoints || 0;
+
+  // iPadOS can report a desktop-like UA, so combine touch + platform hints.
+  if (/ipad|tablet/.test(ua) || (platform.includes("mac") && touchPoints > 1)) {
+    return "Tablet";
+  }
+
+  if (/android/.test(ua)) {
+    return ua.includes("mobile") ? "Android" : "Tablet";
+  }
+
+  if (/iphone|ipod/.test(ua)) {
+    return "iOS";
+  }
+
+  if (/mobile/.test(ua)) {
+    return "Unknown";
+  }
+
+  return "PC";
+}
+
 function getIstTimestamp(date: Date): string {
   const parts = new Intl.DateTimeFormat("en-GB", {
     timeZone: "Asia/Kolkata",
@@ -23,6 +52,8 @@ export async function submitEarlyAccessRequest(
   name: string,
   phone: string,
 ): Promise<EarlyAccessResponse> {
+  const detectedDevice = detectDeviceType();
+
   const endpoints =
     process.env.NODE_ENV === "development"
       ? ["/api/early-access", "http://localhost:3000/api/early-access"]
@@ -34,6 +65,8 @@ export async function submitEarlyAccessRequest(
     action: "early_access_request",
     name,
     phone,
+    Device: detectedDevice,
+    device: detectedDevice,
     timestamp: getIstTimestamp(new Date()),
   };
 
