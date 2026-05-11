@@ -24,34 +24,49 @@ export default function StoreBadges({
     "https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg";
   const appStoreBadgeUrl =
     "https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg";
+  const googlePlayLink =
+    "https://play.google.com/store/apps/details?id=com.cleanfanatics&pcampaignid=web_share";
+  const appStoreLink =
+    "https://apps.apple.com/in/app/clean-fanatics/id6761458747";
 
   return (
     <div className="flex flex-col items-center gap-3">
-      <p className="text-lg font-semibold text-gray-600">Coming Soon</p>
       <div
         className={`flex ${stacked ? "flex-col" : "flex-nowrap"} items-center justify-center gap-2 sm:gap-3 ${className}`}
       >
-        <span className="inline-flex transition-transform duration-200 hover:scale-[1.02]">
+        <a
+          href={googlePlayLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Google Play Store"
+          className="inline-flex transition-transform duration-200 hover:scale-[1.02]"
+        >
           <Image
             src={googleBadgeUrl}
             alt="Get it on Google Play"
             width={imageWidth}
             height={imageHeight}
             unoptimized
-            className={`${imageHeightClass} w-auto drop-shadow-2xl grayscale opacity-60`}
+            className={`${imageHeightClass} w-auto drop-shadow-2xl`}
           />
-        </span>
+        </a>
 
-        <span className="inline-flex transition-transform duration-200 hover:scale-[1.02]">
+        <a
+          href={appStoreLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open Apple App Store"
+          className="inline-flex transition-transform duration-200 hover:scale-[1.02]"
+        >
           <Image
             src={appStoreBadgeUrl}
             alt="Download on the App Store"
             width={imageWidth}
             height={imageHeight}
             unoptimized
-            className={`${imageHeightClass} w-auto drop-shadow-2xl grayscale opacity-60`}
+            className={`${imageHeightClass} w-auto drop-shadow-2xl`}
           />
-        </span>
+        </a>
       </div>
     </div>
   );
