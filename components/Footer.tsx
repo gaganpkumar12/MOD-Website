@@ -5,7 +5,6 @@ import { Copyright } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import StoreBadges from "./StoreBadges";
-import TwinkleSparkle from "./ui/TwinkleSparkle";
 import { submitEarlyAccessRequest } from "../lib/earlyAccessClient";
 
 export default function Footer() {
@@ -69,10 +68,6 @@ export default function Footer() {
     };
   }, []);
 
-  const handleEarlyAccess = () => {
-    setShowModal(true);
-  };
-
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -117,7 +112,7 @@ export default function Footer() {
         Download
       </p>
       <p className="text-3xl font-bold text-sky-600">Clean Fanatics</p>
-      <button
+      {/* <button
         onClick={handleEarlyAccess}
         className="relative mt-3 inline-flex w-full items-center justify-center rounded-lg bg-brand-dark px-4 py-2 text-center font-semibold text-white hover:bg-slate-900 transition-colors duration-200"
       >
@@ -127,7 +122,7 @@ export default function Footer() {
             <TwinkleSparkle className="h-6 w-6" />
           </span>
         </span>
-      </button>
+      </button> */}
       <StoreBadges className="mt-3" size="sm" stacked />
     </div>
   );

@@ -13,10 +13,10 @@ export default function StoreBadges({
 }: StoreBadgesProps) {
   const imageHeightClass =
     size === "sm"
-      ? "h-9 sm:h-11"
+      ? "h-14 sm:h-11"
       : size === "lg"
-        ? "h-11 sm:h-16"
-        : "h-9 sm:h-14";
+        ? "h-16 sm:h-16"
+        : "h-14 sm:h-14";
   const imageWidth = size === "sm" ? 144 : size === "lg" ? 196 : 164;
   const imageHeight = size === "sm" ? 40 : size === "lg" ? 60 : 48;
 

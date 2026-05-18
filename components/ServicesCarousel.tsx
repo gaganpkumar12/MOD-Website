@@ -6,7 +6,6 @@ import { useMemo, useState } from "react";
 import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
 import StoreBadges from "./StoreBadges";
-import TwinkleSparkle from "./ui/TwinkleSparkle";
 import { submitEarlyAccessRequest } from "../lib/earlyAccessClient";
 
 interface ServiceItem {
@@ -50,10 +49,6 @@ export default function ServicesCarousel() {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [formData, setFormData] = useState({ name: "", phone: "" });
   const [loading, setLoading] = useState(false);
-
-  const handleEarlyAccess = () => {
-    setShowModal(true);
-  };
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -215,7 +210,8 @@ export default function ServicesCarousel() {
               Book trusted cleaning help
             </h2>
             <p className="mt-3 text-base font-semibold text-slate-500 sm:text-lg">
-              From stubborn mess to daily upkeep, CleanFanatic&apos;s has you covered
+              From stubborn mess to daily upkeep, CleanFanatic&apos;s has you
+              covered
             </p>
           </div>
         </div>
@@ -235,7 +231,7 @@ export default function ServicesCarousel() {
               next clean one tap away.
             </p>
             <div className="mt-6 flex flex-col items-center gap-4">
-              <button
+              {/* <button
                 onClick={handleEarlyAccess}
                 className="relative mx-auto inline-flex items-center justify-center rounded-lg bg-brand-dark px-6 py-2 text-center font-semibold text-white hover:bg-slate-900 transition-colors duration-200"
               >
@@ -245,7 +241,7 @@ export default function ServicesCarousel() {
                     <TwinkleSparkle className="h-6 w-6" />
                   </span>
                 </span>
-              </button>
+              </button> */}
               <StoreBadges size="md" />
             </div>
           </div>
