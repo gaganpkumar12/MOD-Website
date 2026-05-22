@@ -6,7 +6,6 @@ import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
 import ScrollReveal from "./ui/ScrollReveal";
 import StoreBadges from "./StoreBadges";
-import TwinkleSparkle from "./ui/TwinkleSparkle";
 import { submitEarlyAccessRequest } from "../lib/earlyAccessClient";
 
 interface Benefit {
@@ -33,8 +32,7 @@ const benefits: Benefit[] = [
   },
   {
     title: "Highly Rated",
-    description:
-      "Trusted by 28,000+ customers with 4.9-star Google rating.",
+    description: "Trusted by 28,000+ customers with 4.9-star Google rating.",
     icon: Headset,
   },
 ];
@@ -43,10 +41,6 @@ export default function WhyCleanFanatics() {
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({ name: "", phone: "" });
   const [loading, setLoading] = useState(false);
-
-  const handleEarlyAccess = () => {
-    setShowModal(true);
-  };
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -200,7 +194,7 @@ export default function WhyCleanFanatics() {
                 Download the app to book faster, track your service, and keep
                 your next clean one tap away.
               </p>
-              <button
+              {/* <button
                 onClick={handleEarlyAccess}
                 disabled={loading}
                 className="relative mt-4 mx-auto inline-flex items-center justify-center rounded-lg bg-sky-400 px-8 py-3 text-center font-semibold text-brand-dark transition-colors duration-200 hover:bg-sky-300 disabled:bg-sky-200"
@@ -213,7 +207,7 @@ export default function WhyCleanFanatics() {
                     </span>
                   )}
                 </span>
-              </button>
+              </button> */}
               <div className="mt-6 flex justify-center">
                 <StoreBadges size="md" />
               </div>

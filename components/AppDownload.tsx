@@ -5,17 +5,12 @@ import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
 import StoreBadges from "./StoreBadges";
 import ScrollReveal from "./ui/ScrollReveal";
-import TwinkleSparkle from "./ui/TwinkleSparkle";
 import { submitEarlyAccessRequest } from "../lib/earlyAccessClient";
 
 export default function AppDownload() {
   const [showModal, setShowModal] = useState(false);
   const [formData, setFormData] = useState({ name: "", phone: "" });
   const [loading, setLoading] = useState(false);
-
-  const handleEarlyAccess = () => {
-    setShowModal(true);
-  };
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -142,7 +137,7 @@ export default function AppDownload() {
             </ScrollReveal>
 
             <div className="mt-8 flex flex-col items-center gap-6">
-              <button
+              {/* <button
                 onClick={handleEarlyAccess}
                 className="relative mx-auto inline-flex items-center justify-center rounded-lg bg-sky-400 px-6 py-3 text-center font-semibold text-slate-900 hover:bg-sky-500 transition-colors duration-200 shadow-md hover:shadow-lg"
               >
@@ -152,7 +147,7 @@ export default function AppDownload() {
                     <TwinkleSparkle className="h-6 w-6" />
                   </span>
                 </span>
-              </button>
+              </button> */}
               <StoreBadges />
             </div>
           </div>

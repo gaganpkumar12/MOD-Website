@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import StoreBadges from "./StoreBadges";
-import TwinkleSparkle from "./ui/TwinkleSparkle";
 import { submitEarlyAccessRequest } from "../lib/earlyAccessClient";
 
 const words = [
@@ -66,10 +65,6 @@ export default function Hero() {
       document.body.style.overflow = "unset";
     };
   }, [showModal, showSuccessModal]);
-
-  const handleEarlyAccess = () => {
-    setShowModal(true);
-  };
 
   const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -253,7 +248,7 @@ export default function Hero() {
         />
         {/* Left side image (inverted) */}
         <div
-          className="pointer-events-none absolute z-[2] hidden items-start lg:left-[-18%] lg:top-[24%] lg:flex lg:h-[600px] lg:w-[520px] xl:left-[-10%] xl:top-[23%] xl:h-[720px] xl:w-[640px] min-[1320px]:left-[-4.9%] min-[1320px]:top-[16.5%] min-[1320px]:h-[860px] min-[1320px]:w-[760px]"
+          className="pointer-events-none absolute z-[2] hidden items-start lg:left-[-18%] lg:top-[24%] lg:flex lg:h-[600px] lg:w-[520px] xl:left-[-10%] xl:top-[23%] xl:h-[720px] xl:w-[640px] min-[1320px]:left-[-4.9%] min-[1320px]:top-[15.06%] min-[1320px]:h-[860px] min-[1320px]:w-[760px]"
           aria-hidden="true"
         >
           <Image
@@ -266,7 +261,7 @@ export default function Hero() {
 
         {/* Right side image */}
         <div
-          className="pointer-events-none absolute z-[2] hidden items-start lg:right-[-18%] lg:top-[24%] lg:flex lg:h-[600px] lg:w-[520px] xl:right-[-10%] xl:top-[23%] xl:h-[720px] xl:w-[640px] min-[1320px]:right-[-4.7%] min-[1320px]:top-[16.5%] min-[1320px]:h-[860px] min-[1320px]:w-[760px]"
+          className="pointer-events-none absolute z-[2] hidden items-start lg:right-[-18%] lg:top-[24%] lg:flex lg:h-[600px] lg:w-[520px] xl:right-[-10%] xl:top-[23%] xl:h-[720px] xl:w-[640px] min-[1320px]:right-[-4.7%] min-[1320px]:top-[15.06%] min-[1320px]:h-[860px] min-[1320px]:w-[760px]"
           aria-hidden="true"
         >
           <Image
@@ -319,7 +314,7 @@ export default function Hero() {
               taps
             </motion.p>
 
-            <motion.button
+            {/* <motion.button
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{
@@ -339,7 +334,7 @@ export default function Hero() {
                   </span>
                 )}
               </span>
-            </motion.button>
+            </motion.button> */}
 
             <motion.div
               initial={{ opacity: 0, y: 18 }}
